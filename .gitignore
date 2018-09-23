@@ -88,5 +88,8 @@ local_settings.py
 .env
 db.sqlite3
 
-#Virtual Environment
+##Pycharm File##
+.idea
+
+#virtual environment
 venv
