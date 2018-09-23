@@ -1,0 +1,22 @@
+body {
+  color: #fff;
+  background-color: #FFB6C1;
+}
+
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-brand {
+  padding-top: 20px; /* just to push the brand li'l down */
+}
+
+.navbar-brand h1 {
+  font-weight: bold;
+  font-size: 2em; /*Relative size increase as per h1 here*/
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
