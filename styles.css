@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(https://pixabay.com/get/eb30b0082ef1023ed1534705fb0938c9bd22ffd41cb2194095f2c97fa0/clouds-2517653_1920.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.front-end-details{
+  width: 900px;
+  height: 200px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+
+.container img {vertical-align: middle;}
+
+.container .content {
+  text-shadow: 3px 2px red;
+  position: absolute;
+  top: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
+  color: #transparent;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+}
+
+
+.front-end-details { 
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.front-end-details label{
+  display: block;
+  margin: 5px 10px 5px 10px;
+}
+
+
+.front-end-details select {
+    vertical-align: middle;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+.front-end-details .group{
+  display: inline-block;
+}
