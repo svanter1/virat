@@ -53,16 +53,25 @@ body {
 	.container{
 
   /*text-shadow: 3px 2px white;*/
-  background:rgb(0, 139, 139); /* Fallback color */
+  
   /*background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
   color: #transparent;
   width: 100%;
   margin-top: 20px;
   height: 20px;
   padding: 20px;
+  background:rgb(0, 139, 139); /* Navbar color */
+  -webkit-animation: animate 5s infinite; /* Safari 4.0 - 8.0 */
+   animation: animate 5s infinite;
+}
 
 
-  
+@-webkit-keyframes animate {
+    50% {background-color:maroon;}
+}
+
+@keyframes animate {
+    50% {background-color: maroon;}
 }
 
 .content h1{
