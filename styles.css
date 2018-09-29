@@ -1,20 +1,43 @@
 body {
   margin: 0;
   padding: 0;
-  background: url(https://pixabay.com/get/eb30b0082ef1023ed1534705fb0938c9bd22ffd41cb2194095f2c97fa0/clouds-2517653_1920.jpg);
+  /*background: url('file:///G:/KAJAL/Fall18/SER515/front-end-image.jpg');*/
+  background: url(https://mcalvanyweeklycommentary.com/wp-content/uploads/08_01_17.jpg);
+  background-repeat: repeat;
   background-size: cover;
-  background-position: center;
-  font-family: Arial;
+ background-position: all;
+  font-family: Lucida Console;
   font-size: 17px;
 }
 
 .banner h2{
 	top: 100px;
-	left: 100px;
+	left: 24em;
 	text-align: center;
 	color: #cdd0d7;
   	position: absolute;
 }
+
+.banner h2{
+	 position: absolute;
+	 /* Safari compatible */
+    -webkit-animation: animatetxt 7s;  
+    -webkit-animation-fill-mode: forwards; /* Safari compatible */
+    animation: animatetxt 7s;
+}
+
+/* Safari compatible */
+@-webkit-keyframes animatetxt{
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+@keyframes animatetxt {
+    from {top: 0px;}
+    to {top: 200px; }
+}
+
+ 
 .front-end-details{
   width: 900px;
   height: 200px;
@@ -30,42 +53,53 @@ body {
 .container img {vertical-align: middle;}
 
 	.container{
+
   /*text-shadow: 3px 2px white;*/
   
-  
-  
-  background:rgb(178,34,34); /* Fallback color */
   /*background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
   color: #transparent;
   width: 100%;
-  height: 50px;
+  margin-top: 20px;
+  height: 20px;
   padding: 20px;
-  
+  background:rgb(0, 139, 139); /* Navbar color */
+  /* Safari compatible */
+  -webkit-animation: animate 5s infinite; 
+   animation: animate 5s infinite;
+}
+
+
+@-webkit-keyframes animate {
+    50% {background-color:maroon;}
+}
+
+@keyframes animate {
+    50% {background-color: maroon;}
 }
 
 .content h1{
-	top: 0;
+	top: 5px;
 	text-align: center;
-	color: #cdd0d7;
+	color: #FFCC66;
   	position: absolute;
 	/*position: relative;*/
-	/* Safari support 4.0 - 8.0 */
-    -webkit-animation: mymove 5s infinite; 
-    /* Safari 4.0 - 8.0 */
-    -webkit-animation-timing-function: linear; 
-    animation: mymove 8s infinite;
-    animation-timing-function: linear;
+	/* Safari compatible */
+    -webkit-animation: animate2 8s infinite; 
+    -webkit-animation-timing-function: linear;
+    animation: animate2 8s infinite;
+    animation-timing-function: linear; 
+    
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
+@-webkit-keyframes animate2 {
     from {left: 0px;}
-    to {left: 200px;}
+    to {left: 850px;}
 }
 
-@keyframes mymove {
+@keyframes animate2 {
     from {left: 0px;}
-    to {left: 800px;}
+    to {left: 850px;}
 }
 
 
