@@ -20,17 +20,19 @@ body {
 
 .banner h2{
 	 position: absolute;
-    -webkit-animation: mymove2 7s;  /* Safari compatible */
+	 /* Safari compatible */
+    -webkit-animation: animatetxt 7s;  
     -webkit-animation-fill-mode: forwards; /* Safari compatible */
-    animation: mymove2 7s;
+    animation: animatetxt 7s;
 }
 
-@-webkit-keyframes mymove2 {
+/* Safari compatible */
+@-webkit-keyframes animatetxt{
     from {top: 0px;}
     to {top: 200px;}
 }
 
-@keyframes mymove2 {
+@keyframes animatetxt {
     from {top: 0px;}
     to {top: 200px; }
 }
@@ -61,7 +63,8 @@ body {
   height: 20px;
   padding: 20px;
   background:rgb(0, 139, 139); /* Navbar color */
-  -webkit-animation: animate 5s infinite; /* Safari 4.0 - 8.0 */
+  /* Safari compatible */
+  -webkit-animation: animate 5s infinite; 
    animation: animate 5s infinite;
 }
 
@@ -80,23 +83,23 @@ body {
 	color: #FFCC66;
   	position: absolute;
 	/*position: relative;*/
-	/* Safari support 4.0 - 8.0 */
-    -webkit-animation: mymove 5s infinite; 
-    /* Safari 4.0 - 8.0 */
-    -webkit-animation-timing-function: linear; 
-    animation: mymove 8s infinite;
-    animation-timing-function: linear;
+	/* Safari compatible */
+    -webkit-animation: animate2 8s infinite; 
+    -webkit-animation-timing-function: linear;
+    animation: animate2 8s infinite;
+    animation-timing-function: linear; 
+    
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
+@-webkit-keyframes animate2 {
     from {left: 0px;}
-    to {left: 200px;}
+    to {left: 850px;}
 }
 
-@keyframes mymove {
+@keyframes animate2 {
     from {left: 0px;}
-    to {left: 800px;}
+    to {left: 850px;}
 }
 
 
