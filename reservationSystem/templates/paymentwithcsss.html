@@ -3,36 +3,36 @@
 <style>
 <!-- for class row in html we are creating display  using display in css  -->
 .row {
-  display: -ms-flexbox; 
-  display: flex;
-  -ms-flex-wrap: wrap; 
-  flex-wrap: wrap;
-  margin: 0 -16px;
+  display: -ms-flexbox; <!-- to make it flexible,we add this ms- flex   -->
+  display: flex;<!-- to make it flexible   -->
+  -ms-flex-wrap: wrap; <!-- property specifies if flex items are forced into a single line or can be wrapped onto multiple lines. -->
+  flex-wrap: wrap;<!--  -->
+  margin: 0 -16px;<!--  -->
 }
-<!-- for class col-25 we are adjusting it 25% -->
-.col-25 {
+<!-- for class column-25 we are adjusting it 25% -->
+.column-25 {
   -ms-flex: 25%;
   flex: 25%;
 }
-<!-- for class col-50% we are adjusting it 50% -->
-.col-50 {
+<!-- for class column-50 we are adjusting it 50% -->
+.column-50 {
   -ms-flex: 50%; 
   flex: 50%;
 }
-
-.col-75 {
+<!-- for class column-75 we are adjusting it 75% -->
+.column-75 {
   -ms-flex: 75%;
   flex: 75%;
 }
-
-.col-25,
-.col-50,
-.col-75 {
+<!-- for class column-75 25 50 we are padding 0 and 16px for better spacing -->
+.column-25,
+.column-50,
+.column-75 {
   padding: 0 16px;
 }
-
+<!-- for class container in html I created background color padding border border-radius -->
 .container {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2;<!--  -->
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
@@ -51,7 +51,7 @@ label {
   display: block;
 }
 
-.icon-container {
+.icon_container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
@@ -78,22 +78,22 @@ span.price {
   color: grey;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+/* Responsive layout - when the screen is less than 800px wide, make the two columnumns stack on top of each other instead of next to each other (and change the direction - make the "cart" columnumn go on top) */
 @media (max-width: 800px) {
   .row {
-    flex-direction: column-reverse;
+    flex-direction: columnumn-reverse;
   }
-  .col-25 {
+  .column-25 {
     margin-bottom: 20px;
   }
 }
 </style>
 <div class="row">
-  <div class="col-75">
+  <div class="column-75">
     <div class="container">
       <form action="">
         <div class="row">
-          <div class="col-50">
+          <div class="column-50">
             <h3>Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
@@ -105,21 +105,21 @@ span.price {
             <input type="text" id="city" name="city" placeholder="New York">
 
             <div class="row">
-              <div class="col-50">
+              <div class="column-50">
                 <label for="state">State</label>
                 <input type="text" id="state" name="state" placeholder="NY">
               </div>
-              <div class="col-50">
+              <div class="column-50">
                 <label for="zip">Zip</label>
                 <input type="text" id="zip" name="zip" placeholder="10001">
               </div>
             </div>
           </div>
 
-          <div class="col-50">
+          <div class="column-50">
             <h3>Payment</h3>
             <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
+            <div class="icon_container">
               <i class="visa" style="color:red"></i>
               <i class="amex" style="color:blue;"></i>
               <i class="mastercard" style="color:red;"></i>
@@ -133,11 +133,11 @@ span.price {
             <input type="text" id="expmonth" name="expmonth" placeholder="September">
 
             <div class="row">
-              <div class="col-50">
+              <div class="column-50">
                 <label for="expyear">Exp Year</label>
                 <input type="text" id="expyear" name="expyear" placeholder="2018">
               </div>
-              <div class="col-50">
+              <div class="column-50">
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="352">
               </div>
