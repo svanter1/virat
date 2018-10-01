@@ -16,6 +16,7 @@ class Flight(models.Model):
     flight_model = models.IntegerField(unique=True)
     routes = models.ForeignKey(RouteSchedule, on_delete=models.CASCADE)
 
+    
 class Booking(models.Model):
     bid = models.AutoField(primary_key=True)
     flight = models.ForeignKey(Flight, default=None, on_delete=models.CASCADE)
@@ -32,4 +33,3 @@ class Passenger(models.Model):
     sex = models.CharField(max_length=1)
     passport = models.CharField(max_length=10)
     seat_no = models.CharField(max_length=3)
-
