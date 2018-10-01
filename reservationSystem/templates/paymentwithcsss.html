@@ -1,13 +1,11 @@
 <html>
 <body>
+
 <style>
-<!-- for class row in html we are creating display  using display in css  -->
-.row {
-  display: -ms-flexbox; <!-- to make it flexible,we add this ms- flex   -->
-  display: flex;<!-- to make it flexible   -->
-  -ms-flex-wrap: wrap; <!-- property specifies if flex items are forced into a single line or can be wrapped onto multiple lines. -->
-  flex-wrap: wrap;<!--  -->
-  margin: 0 -16px;<!--  -->
+
+.ali{
+max-width=500px;
+margin: auto
 }
 <!-- for class column-25 we are adjusting it 25% -->
 .column-25 {
@@ -16,12 +14,13 @@
 }
 <!-- for class column-50 we are adjusting it 50% -->
 .column-50 {
+align: center
   -ms-flex: 50%; 
   flex: 50%;
 }
 <!-- for class column-75 we are adjusting it 75% -->
 .column-75 {
-  -ms-flex: 75%;
+  -ms-flex: 75%;<!--  -->
   flex: 75%;
 }
 <!-- for class column-75 25 50 we are padding 0 and 16px for better spacing -->
@@ -32,14 +31,15 @@
 }
 <!-- for class container in html I created background color padding border border-radius -->
 .container {
+  align : center
   background-color: #f2f2f2;<!--  -->
   padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
+  border: 1px solid lightgrey;<!--  -->
   border-radius: 3px;
 }
 
 input[type=text] {
-  width: 100%;
+  width: 50%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
@@ -50,85 +50,38 @@ label {
   margin-bottom: 10px;
   display: block;
 }
-
+<!--  -->
 .icon_container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
 }
-
-.btn {
-  background-color: #4CAF50;
+<!--  -->
+.button {
+  background-color: red;
   color: white;
   padding: 12px;
   margin: 10px 0;
   border: none;
-  width: 100%;
-  border-radius: 3px;
+  width: 50%;
+  border-radius: 2px;
   cursor: pointer;
   font-size: 17px;
 }
-
-.btn:hover {
+<!--  -->
+.button:hover {
   background-color: blue;
 }
+<!--  -->
 
-span.price {
-  float: right;
-  color: grey;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columnumns stack on top of each other instead of next to each other (and change the direction - make the "cart" columnumn go on top) */
-@media (max-width: 800px) {
-  .row {
-    flex-direction: columnumn-reverse;
-  }
-  .column-25 {
-    margin-bottom: 20px;
-  }
-}
 </style>
-<div class="row">
-  <div class="column-75">
-    <div class="container">
-      <form action="">
-        <div class="row">
-          <div class="column-50">
-            <h3>Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
-
-            <div class="row">
-              <div class="column-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
-              </div>
-              <div class="column-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
-              </div>
-            </div>
-          </div>
-
+<div class="ali">
           <div class="column-50">
             <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon_container">
-              <i class="visa" style="color:red"></i>
-              <i class="amex" style="color:blue;"></i>
-              <i class="mastercard" style="color:red;"></i>
-              <i class="discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="cardname">Name on Card</label>
+            <input type="text" id="cardname" name="cardname" placeholder="shashi">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="0000000000000">
             <label for="expmonth">Exp Month</label>
             <input type="text" id="expmonth" name="expmonth" placeholder="September">
 
@@ -145,10 +98,14 @@ span.price {
           </div>
 
         </div>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Continue to checkout" class="button">
       </form>
     </div>
   </div>
 </div>
+</div>
 </body>
 </html>
+
+
+<!-- referenced from w3 schools -->
