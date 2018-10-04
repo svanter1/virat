@@ -14,7 +14,7 @@
 
 Wesite Homepage launched and deployed on heroku. Following is the website URL as a deliverable for sprint 1:
 
-**https://pacific-fjord-46398.herokuapp.com**
+**https://amigoairlines.herokuapp.com**
 
 
  
