@@ -1,1 +1,1 @@
-web: gunicorn reservationSystem.wsgi --pythonpath reservationSystem --log-file -
+web: gunicorn reservationSystem.wsgi 
