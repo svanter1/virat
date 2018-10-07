@@ -20,5 +20,6 @@ from bookings import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path(r'^payment/$', views.newpay, name='newpay'),
     path('admin/', admin.site.urls),
 ]
