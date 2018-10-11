@@ -170,23 +170,57 @@ label {
             </label>
             <input type="text" id="cno" name="cno" placeholder="Enter Card Number">
             
-            <label for="expiremonth">expire Month</label>
-            <input type="text" id="expiremonth" name="expiremonth" placeholder="September">
-
             <div class="row">
               <div class="column-50">
-                <label for="expireyear">expire Year</label>
-                <input type="text" id="expireyear" name="expireyear" placeholder="2018">
+                <!-- for getting the expiry details of the card  -->
+            <label for="expm">Valid Through (Month)</label>
+           
+               <select id="expm">
+      <option selected> MM </option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>
+           <!-- <input type="text" id="expm" name="expm" placeholder="MM">-->
+
+
+                <label for="expy">Valid Through (Year)</label>
+                <select id="expy">
+      <option selected>YYYY</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+      <option>2027</option>
+      <option>2028</option>
+      <option>2029</option>
+      <option>2030</option>
+  </select>
+               <!-- <input type="text" id="expy" name="expy" placeholder="YYYY">-->
               </div>
-              <div class="column-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
+          
+                <label for="cvv"> CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="***">
               </div>
             </div>
           </div>
 
         </div>
-		</div>
+    </div>
         <input type="submit" align= "center" value="Continue to checkout" class="button">
 		</div>
          
