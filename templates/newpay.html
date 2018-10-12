@@ -1,7 +1,44 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+<title> Payment Page </title>
+
+
+<script>
+
+function validate()
+{
+  var name=document.getElementById("name");
+
+  if (name.value == null || name.value =="")
+  {
+    alert("Enter Name");
+    return false;
+    }
+
+
+    var cvv=document.getElementById("cvv");
+  
+
+  if (cvv.value == null || cvv.value == "" )
+  {
+    alert(" Please Enter CVV code from the back of your card");
+    return false;
+    }
+
+}
+
+</script>
+</head>
 
 <body> 
-<h1 style="text-align: center"> checkout page </h1>           
-<form name="RegForm" action="/submit.php" onsubmit="" method="post">  
+           
+<form id="form" name="RegForm" action="/submit.php" onsubmit="" method="get">  
+ 
 <style> 
 
 body {
@@ -177,18 +214,19 @@ label {
            
                <select id="expm">
       <option selected> MM </option>
-      <option>Jan</option>
-      <option>Feb</option>
-      <option>Mar</option>
-      <option>Apr</option>
-      <option>May</option>
-      <option>Jun</option>
-      <option>Jul</option>
-      <option>Aug</option>
-      <option>Sep</option>
-      <option>Oct</option>
-      <option>Nov</option>
-      <option>Dec</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+      <option>2027</option>
+      <option>2028</option>
+      <option>2029</option>
+      <option>2030</option>
   </select>
            <!-- <input type="text" id="expm" name="expm" placeholder="MM">-->
 
@@ -221,7 +259,7 @@ label {
 
         </div>
     </div>
-        <input type="submit" align= "center" value="Continue to checkout" class="button">
+        <input type="submit" align= "center" value="Continue to checkout" class="button" onClick="return validate();" />
 		</div>
          
 </form> 
