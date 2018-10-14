@@ -29,6 +29,15 @@ function validate()
     alert(" Please Enter CVV code from the back of your card");
     return false;
     }
+	/*Amex, mastercard, discover, visa */
+  var cardno = /^(?:(3[47][0-9]{13})|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(4[0-9]{12}(?:[0-9]{3})?))$/;
+  while(!(cno.value.match(cardno)))
+       
+        {
+        alert("Not a credit card number!");
+        return false;
+        }
+
 
 }
 
