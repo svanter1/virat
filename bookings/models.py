@@ -83,6 +83,7 @@ class BookingInfo(models.Model):
     seats = models.TextField(blank=True, null=True)  # This field type is a guess.
 
     class Meta:
+        managed = False
         db_table = 'booking_info'
 
 
@@ -95,6 +96,7 @@ class CustomerInfo(models.Model):
     passport = models.TextField(blank=True, null=True)
 
     class Meta:
+        managed = False
         db_table = 'customer_info'
 
 
@@ -150,6 +152,7 @@ class FlightDetails(models.Model):
     available_eseats = models.IntegerField()
 
     class Meta:
+        managed = False
         db_table = 'flight_details'
 
 
@@ -164,4 +167,5 @@ class FlightInfo(models.Model):
     economy_seats = models.IntegerField()
 
     class Meta:
+        managed = False
         db_table = 'flight_info'

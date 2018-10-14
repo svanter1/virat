@@ -24,5 +24,5 @@ urlpatterns = [
 	#added payment page to django framework
     path(r'^payment/$', views.newpay, name='newpay'),
     path('admin/', admin.site.urls),
-    path('searchResults', views.searchResults, name='results'),
+    #path('searchResults', views.searchResults, name='results'),
 ]
