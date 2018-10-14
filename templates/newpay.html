@@ -73,6 +73,14 @@ form.addEventListener('submit',ev =>
     alert(" Please Enter CVV code from the back of your card");
     return false;
     }
+
+  var cvvno = /^(?:[0-9]{3})$/;
+  while(!(cvv.value.match(cvvno)))
+        
+        {
+        alert(" Invalid CVV !");
+        return false;
+        }
 	
 
 
