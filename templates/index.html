@@ -11,27 +11,21 @@
 
 <div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
 <div class="front-end-details">
-  <form action="searchResults.html" method="get">
+  <form method="post">
 	<div class="group">
 		<label for="src">Source</label>
 	    <select id="src" name="source" placeholder="Enter Source..">
-	    	<option value="select">Select</option>
-	    	<option value="phoenix">Phoenix</option>
-	      	<option value="sandiego">San Diego</option>
-	      	<option value="sanfrancisco">San Francisco</option>
-	      	<option value="newyork">New York</option>
-	      	<option value="seatle">Seatle</option>
+			{% for flight in source %}
+      			<option value={{flight.source}}>{{flight.source}}</option>
+    		{% endfor %}
 	    </select>
 	</div>
 	<div class="group">
 	    <label for="dst">Destination</label>
 	    <select id="dst" name="destination" placeholder="Enter Destination..">
-	    	<option value="select">Select</option>
-	    	<option value="phoenix">Phoenix</option>
-	      	<option value="sandiego">San Diego</option>
-	      	<option value="sanfrancisco">San Francisco</option>
-	      	<option value="newyork">New York</option>
-	      	<option value="seatle">Seatle</option>
+	    	{% for flight in source %}
+      			<option value={{flight.destination}}>{{flight.destination}}</option>
+    		{% endfor %}
 	      </select>
 	</div>
 	<div class="group">
@@ -51,7 +45,7 @@
 
 	<div class="group">
         <label for="date">Date</label>
-        <input type="date" id="start" name="trip"/>
+        <input type="date" id="start" name="date"/>
     </div>
 
   <div class="group">
@@ -59,11 +53,11 @@
   </div>
 
   </form>
-  <div>
+<!--  <div>
   <a href="{% url 'newpay' %}">payment</a>
   </div>
 </div>
-	  <div class="container">
+	  <div class="container">-->
   
 </div>
   <div class="content">
