@@ -19,6 +19,7 @@ Wesite Homepage launched and deployed on heroku. Following is the website URL as
 
  # Instruction To Locally Setup The Application :
 
+
 1. Git clone the repository from GitHub (https://github.com/svanter1/virat.git).
 2. Install python 3.6 from https://www.python.org/downloads/, if not installed.
 3. Install virtual environment by typing "pip install virtualenv" in Terminal/Command Prompt, if not installed.

@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+<title> Payment Page </title>
+<!--<script type="text/javascript" src="validate.js"></script> -->
+<script type="text/javascript" src="{{ STATIC_URL }}js/validate.js"></script>
+
+
+</head>
+
+<body> 
+           
+<form id="form" name="RegForm" action="" onsubmit=" return validate()" method="post">  
+ 
+<style> 
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  background: url(https://mcalvanyweeklycommentary.com/wp-content/uploads/08_01_17.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+ background-position: all;
+  font-family: Comic Sans MS;
+  font-size: 17px;
+
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+} 
+  .ali{
+max-width=500px;
+margin: auto
+}
+<!-- for class column-25 we are adjusting it 25% -->
+.column-25 {
+  -ms-flex: 25%;
+  flex: 25%;
+}
+<!-- for class column-50 we are adjusting it 50% -->
+.column-50 {
+align: center
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+<!-- for class column-75 we are adjusting it 75% -->
+.column-75 {
+  -ms-flex: 75%;<!--  -->
+  flex: 75%;
+}
+<!-- for class column-75 25 50 we are padding 0 and 16px for better spacing -->
+.column-25,
+.column-50,
+.column-75 {
+  padding: 0 16px;
+}
+<!-- for class container in html I created background color padding border border-radius -->
+.container {
+  align : center
+  background-color: #f2f2f2;<!--  -->
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;<!--  -->
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+<!--  -->
+.icon_container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+<!--  -->
+.button {
+  background-color: red;
+  color: white;
+  align: center;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 50%;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 17px;
+  position : relative;
+   top:50%; 
+    left:25%;
+}
+<!--  -->
+.button:hover {
+  background-color: blue;
+}
+  <!--  -->
+
+.container img {vertical-align: middle;}
+
+<!--  -->
+
+
+  .container{
+
+  /*text-shadow: 3px 2px white;*/
+
+  /*background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
+  color: #transparent;
+  width: 100%;
+  margin-top: 20px;
+  height: 20px;
+  padding: 20px;
+  /*background:rgb(0, 139, 139); /* Navbar color */
+  /* Safari compatible */
+  -webkit-animation: animate 5s infinite;
+   animation: animate 5s infinite;
+   
+}
+ <!--  -->
+.banner h2{
+  top: 100px;
+  left: 24em;
+  text-align: center;
+  /*color: #cdd0d7;*/
+    position: absolute;
+}
+ <!--  -->
+.banner h2{
+   position: absolute;
+   color: #cdd0d7;
+   /* Safari compatible */
+    -webkit-animation: animatetxt 7s;
+    -webkit-animation-fill-mode: forwards; /* Safari compatible */
+    animation: animatetxt 7s;
+
+}
+ <!--  -->
+
+ .content h1{
+  top: 5px;
+  text-align: center;
+  font-family: "Impact";
+  font-size: 50px;
+  color: #FFCC66;
+    position: absolute;
+  /*position: relative;*/
+  /* Safari compatible */
+    -webkit-animation: animate2 8s infinite;
+    -webkit-animation-timing-function: linear;
+    animation: animate2 8s infinite;
+    animation-timing-function: linear;
+}
+
+ <!--  -->
+
+}  
+</style>
+<h1 style="text-align: center"> CHECKOUT PAGE </h1>        
+<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+
+<div class = "center">
+  <div class="ali">
+          <div class="column-50">
+            <h3>Payment</h3>
+            <label for="name">Name on Card</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+            <label for="ccnum">Credit card number (Only AMERICAN EXPRESS, VISA, DISCOVER, MASTERCARD accepted )
+            </label>
+            <input type="text" id="cno" name="cno" placeholder="Enter Card Number">
+            
+            <div class="row">
+              <div class="column-50">
+                <!-- for getting the expiry details of the card  -->
+            <label for="expm">Valid Through (Month)</label>
+           
+               <select id="expm">
+      <option selected> MM </option>
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+      <option>05</option>
+      <option>06</option>
+      <option>07</option>
+      <option>08</option>
+      <option>09</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+  </select>
+           <!-- <input type="text" id="expm" name="expm" placeholder="MM">-->
+
+
+                <label for="expy">Valid Through (Year)</label>
+                <select id="expy">
+      <option selected>YYYY</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+      <option>2027</option>
+      <option>2028</option>
+      <option>2029</option>
+      <option>2030</option>
+  </select>
+               <!-- <input type="text" id="expy" name="expy" placeholder="YYYY">-->
+              </div>
+          
+                <label for="cvv"> CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="***">
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+        <input type="submit" align= "center" value="Continue to checkout" class="button" onClick="return validate();" />
+		</div>
+         
+</form>
+<div class="container"> 
+  
+</div>
+  <div class="content">
+
+    <h1 id="nav">AMIGOS JET</h1>
+  </div>
+</body>

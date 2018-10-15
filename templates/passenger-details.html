@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Passenger Details </title>
+</head>
+<body>
+	<style>
+		 
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  background: url(https://mcalvanyweeklycommentary.com/wp-content/uploads/08_01_17.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+ background-position: all;
+  font-family: sans-serif;
+  font-size: 17px;
+
+}
+
+.center {
+    margin: auto;
+    width: 85%;
+    border: 3px solid #ffcc66;
+    padding: 10px;
+} 
+
+  .ali{
+max-width=900px;
+margin: auto
+}
+
+.column-25 {
+  -ms-flex: 25%;
+  flex: 25%;
+}
+
+.column-50 {
+align: center
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.column-75 {
+  -ms-flex: 75%;<!--  -->
+  flex: 75%;
+}
+
+.column-25,
+.column-50,
+.column-75 {
+  padding: 0 16px;
+}
+
+.container {
+  align : center
+  background-color: #f2f2f2;<!--  -->
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;<!--  -->
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 25%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  
+  display: block;
+}
+
+ .last{
+	text-align: left;
+
+}
+<!--  -->
+.icon_container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+<!--  -->
+.button {
+  background-color: red;
+  color: white;
+  align: center;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 50%;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 17px;
+  position : relative;
+   top:50%; 
+    left:25%;
+}
+<!--  -->
+.button:hover {
+  background-color: blue;
+}
+  <!--  -->
+
+.container img {vertical-align: middle;}
+
+<!--  -->
+
+
+  .container{
+
+  /*text-shadow: 3px 2px white;*/
+
+  /*background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
+  color: #transparent;
+  width: 100%;
+  margin-top: 20px;
+  height: 20px;
+  padding: 20px;
+  /*background:rgb(0, 139, 139); /* Navbar color */
+  /* Safari compatible */
+  -webkit-animation: animate 5s infinite;
+   animation: animate 5s infinite;
+   
+}
+
+.panel-footer section {
+  margin-bottom: 0px;
+  text-align: left;
+
+  background-color: grey;
+  width: 1000px;
+  }
+
+  .panel-footer section p {
+  color: white;
+  font-size: 13px;
+  }
+
+   .panel-footer .container .copy {
+  color: white;
+  font-size: 13px;
+  }
+
+  
+ 
+.banner h2{
+  top: 100px;
+  left: 22em;
+  text-align: center;
+  /*color: #cdd0d7;*/
+    position: absolute;
+}
+ 
+.banner h2{
+   position: absolute;
+   color: #cdd0d7;
+   /* Safari compatible */
+    -webkit-animation: animatetxt 7s;
+    -webkit-animation-fill-mode: forwards; /* Safari compatible */
+    animation: animatetxt 7s;
+
+}
+ 
+
+ .content h1{
+  top: 5px;
+  text-align: center;
+  font-family: "Impact";
+  font-size: 50px;
+  color: #FFCC66;
+    position: absolute;
+  /*position: relative;*/
+  /* Safari compatible */
+    -webkit-animation: animate2 8s infinite;
+    -webkit-animation-timing-function: linear;
+    animation: animate2 8s infinite;
+    animation-timing-function: linear;
+}
+
+
+ <!--  -->
+
+}  
+
+	</style>
+	<form id="form" name="RegForm" action="/next.php" onsubmit="" method="get">
+		<h1 style="text-align: center"> PASSENGER DETAILS PAGE </h1>        
+<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+
+<div class = "center">
+  <div class="ali">
+          <div class="column-50">
+            <img src="https://images.all-free-download.com/images/graphiclarge/airplane_icon_vector_red_background_280759.jpg" height="80px"><span><h3>Who's Flying?</h3></span>
+            <label for="name">First Name</label> <label for="middlename" class="last">Middle Name</label> <label for="lastname" class="last">Last Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter First Name">
+            <input type="text" id="name" name="middlename" placeholder="Enter Middle Name">
+            <input type="text" id="lastname" lastname="lastname" placeholder="Enter Last Name">
+           <span> <label for="expm">Suffix</label> <span><label for="gender">Gender</span></label><label for="date">Date of Birth</label>
+        
+              <select id="expm">
+      			<option selected> Mr. </option>
+      			<option>Ms.</option>
+      			<option>Mrs.</option>
+			</select>
+			<select id="gender">
+      			<option selected> None </option>
+      			<option>Male</option>
+      			<option>Female</option>
+			</select></span>
+			<input type="date" id="start" name="trip"/>
+		</span>
+            <label for="ccnum">Do you need special assistance? Type Yes if need.
+            </label>
+            <input type="text" id="cno" name="cno" placeholder="Enter Choice">
+          
+          </div>
+
+        </div>
+    </div>
+    	<input type="submit" align= "center" value="Continue to Payment" class="button" onClick="" />
+        
+		
+
+			<footer class="panel-footer">
+		<div class="container " >
+			<div class="column-50">
+			<div class="row"> <!--rowins required 1st , then we decide no. of columns-->
+				<section id="terms">
+					<span><h3><u>Terms and Condtions:</u></h3></span>
+					<p>• I agree to the fare rules, Terms & Conditions, Privacy Policy, and Contract of Carriage.<br>
+					• All nonrefundable funds applied toward the purchase of a new reservation remain nonrefundable.
+					Expiration dates of applied funds may result in new ticket(s) expiring earlier than the 12 months from date of purchase. The new expiration date will be printed on the confirmation receipt sent to you<br>
+					• Prohibition of Multiple/Conflicting Reservations: To promote seat availability for our Customers, Amigo® prohibits multiple reservations for the same Passenger departing from the same city on the same date, or any multiple reservations containing conflicting or overlapping itineraries (such as departures for the same Customer from multiple cities at the same time).<br>
+					• If you are not planning to travel on any portion of this itinerary, please cancel your reservation at least 10 minutes prior to the scheduled departure of your flight.<br>
+					• Please abide by the baggage policies
+				</section>
+				
+			</div>
+			</div>
+			<div class="text-center"><p class="copy"><b>&copy;Amigo Airlines 2018</b></p></div>
+		</div>
+		
+
+	</footer>
+	</div>
+         
+</form> 
+
+</body>
+</html>
