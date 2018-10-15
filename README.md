@@ -17,7 +17,8 @@ Wesite Homepage launched and deployed on heroku. Following is the website URL as
 **https://amigoairlines.herokuapp.com**
 
 
-# Instruction To Locally Setup The Application :
+ # Instruction To Locally Setup The Application :
+
 
 1. Git clone the repository from GitHub (https://github.com/svanter1/virat.git).
 2. Install python 3.6 from https://www.python.org/downloads/, if not installed.
