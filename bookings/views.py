@@ -18,24 +18,23 @@ def home(request):
         date = request.POST['date']
 
         required_flights = FlightInfo.objects.filter(source=src, destination=dest)
-        args['flight'] = []
+        args['details'] = []
         for flt in required_flights:
             date_trn = FlightDetails.objects.filter(flight_id=flt.flight_id, departure_date=date)
             trn = FlightDetails.objects.filter(flight_id=flt.flight_id, available_eseats__gte=count, departure_date=date)
 
             if not date_trn:
-                args['flight'] = [flt.source, flt.destination, flt.duration_hrs, flt.price]
+                args['details'] += [[flt.source, flt.destination, flt.departure, flt.arrival,
+                                     flt.duration_hrs, flt.price]]
 
             elif trn:
-                args['flight'] = [flt.source, flt.destination, flt.duration_hrs, flt.price]
+                args['details'] += [[flt.source, flt.destination, flt.departure, flt.arrival,
+                                     flt.duration_hrs, flt.price]]
 
-        #return render(request, 'index.html', args)
-        #return redirect(request.META['HTTP_REFERER'])
-        return HttpResponse('')
+        return render(request, 'searchResults.html', args)
 
     else:
         return render(request, 'index.html', args)
-
 
 
 def newpay(request):
