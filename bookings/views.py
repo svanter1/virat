@@ -8,7 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def home(request):
-    flight = FlightInfo.objects.all()
+    #flight = FlightInfo.objects.all()
+    flight = FlightInfo.objects.values('source', 'destination').distinct()
     args = {'source': flight}
 
     if request.method == 'POST':
