@@ -11,7 +11,7 @@
 
 <div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
 <div class="front-end-details">
-  <form method="post">
+  <form id="search" method="post">
 	<div class="group">
 		<label for="src">Source</label>
 	    <select id="src" name="source" placeholder="Enter Source..">
@@ -94,7 +94,24 @@ window.onclick = function(event) {
     <h1 id="nav">AMIGOS JET</h1>
   </div>
 
+<div id="content">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/./static/javascript/general.js"></script>
+</div>
+<!--
+    $(document).on('submit','#search',function(e){
+        e.preventDefault();
 
+        $.ajax({type: 'POST',
+        url: '',
+        success:function(){
+            alert('It works');
+        }
+    });
+  });
+
+</script>
+-->
 
 
 </body>
