@@ -147,12 +147,11 @@ class DjangoSession(models.Model):
 class FlightDetails(models.Model):
     flight = models.ForeignKey('FlightInfo', models.DO_NOTHING, blank=True, null=True)
     departure_date = models.DateField(unique=True)
-    price = models.IntegerField(blank=True, null=True)
     available_bseats = models.IntegerField()
     available_eseats = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'flight_details'
 
 
@@ -165,7 +164,8 @@ class FlightInfo(models.Model):
     duration_hrs = models.FloatField(blank=True, null=True)
     business_seats = models.IntegerField()
     economy_seats = models.IntegerField()
+    price = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'flight_info'
