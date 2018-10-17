@@ -20,7 +20,7 @@ from bookings import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-	#added payment page to django framework
+    path('passenger/', views.passenger, name='passenger'),
     path(r'^payment/$', views.newpay, name='newpay'),
     path('admin/', admin.site.urls),
     path('searchResults.html', views.searchResults, name='results')
