@@ -42,9 +42,5 @@ def newpay(request):
     return render(request, 'newpay1.html')
 
 
-'''def searchResults(request):
-    flightInfo = FlightInfo.objects.all()
-    flights = list()
-    for flight in flightInfo:
-        flights.append(flight.source)
-    return HttpResponse(flights)'''
+def searchResults(request):
+    return render(request, 'searchResults.html')

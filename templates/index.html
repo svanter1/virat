@@ -11,10 +11,10 @@
 
 <div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
 <div class="front-end-details">
-  <form id="search" method="post">
+  <form id="search" method="get" action="/searchResults.html">
 	<div class="group">
 		<label for="src">Source</label>
-	    <select id="src" name="source" placeholder="Enter Source..">
+	    <select id="src" name="source" placeholder="Enter Source">
 			{% for flight in source %}
       			<option value={{flight.source}}>{{flight.source}}</option>
     		{% endfor %}
@@ -22,7 +22,7 @@
 	</div>
 	<div class="group">
 	    <label for="dst">Destination</label>
-	    <select id="dst" name="destination" placeholder="Enter Destination..">
+	    <select id="dst" name="destination" placeholder="Enter Destination">
 	    	{% for flight in source %}
       			<option value={{flight.destination}}>{{flight.destination}}</option>
     		{% endfor %}
@@ -31,7 +31,7 @@
 	<div class="group">
 	    <label for="num">Passengers</label>
 	    <select id="num" name="passengers" placeholder="Enter passengers..">
-	    <option value="0">1</option>
+			<option value="0">1</option>
 	      <option value="1">2</option>
 	      <option value="2">3</option>
 	      <option value="3">4</option>
