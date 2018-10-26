@@ -28,7 +28,7 @@ def home(request):
 
                 if not date_trn:
                     args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
-                                         flt.duration_hrs, flt.price, flt.flight_id]]
+                                         flt.duration_hrs, flt.price, flt.flight_id, count]]
 
                 else:
                     if cls:
@@ -40,7 +40,7 @@ def home(request):
 
                     if trn:
                         args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
-                                         flt.duration_hrs, flt.price, flt.flight_id]]
+                                         flt.duration_hrs, flt.price, flt.flight_id, count]]
 
         return render(request, 'searchResults.html', args)
 
