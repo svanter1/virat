@@ -49,10 +49,17 @@ def home(request):
 
 
 def passenger(request):
-    return render(request, 'passenger-details.html')
+    if request.method == 'POST':
+        first_name = request.POST['name']
+        last_name = request.POST['lastname']
+        age = request.POST['phone']
+        gender = request.POST['gender']
+        passport = request.POST['email']
+    else:
+        return render(request, 'passenger-details.html')
 
 def newpay(request):
-    return render(request, 'newpay1.html')
+    return render(request, 'newpay.html')
 
 
 '''def searchResults(request):
