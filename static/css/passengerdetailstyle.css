@@ -54,17 +54,30 @@ align: center
 }
 
 input[type=text] {
-  width: 25%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  vertical-align: middle;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+input[type=date], select {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 10px 5px 10px;
+    margin-left: 25px;
+    display: inline-block;
+    border: 1px solid #ccc;
+
 }
 
 label {
-  
+
   display: block;
+  margin: 5px 10px 5px 10px;
+  margin-left: 25px;
 }
+
 
  .last{
 	text-align: left;
@@ -89,13 +102,13 @@ label {
   cursor: pointer;
   font-size: 17px;
   position : relative;
-   top:50%; 
+   top:50%;
     left:25%;
 }
 .button:hover {
   background-color: blue;
 }
-  
+
 .container img {vertical-align: middle;}
 
 
@@ -111,7 +124,7 @@ label {
   /* Safari compatible */
   -webkit-animation: animate 5s infinite;
    animation: animate 5s infinite;
-   
+
 }
 
 .panel-footer section {
@@ -132,8 +145,8 @@ label {
   font-size: 13px;
   }
 
-  
- 
+
+
 .banner h2{
   top: 100px;
   left: 22em;
@@ -141,7 +154,7 @@ label {
   /*color: #cdd0d7;*/
     position: absolute;
 }
- 
+
 .banner h2{
    position: absolute;
    color: #cdd0d7;
@@ -151,7 +164,12 @@ label {
     animation: animatetxt 7s;
 
 }
- 
+
+
+.center .group{
+  display: inline-block;
+}
+
 
  .content h1{
   top: 5px;
@@ -167,4 +185,3 @@ label {
     animation: animate2 8s infinite;
     animation-timing-function: linear;
 }
-  
