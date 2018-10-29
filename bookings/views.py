@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import FlightInfo, FlightDetails
 import datetime
 
+
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -17,7 +18,7 @@ def home(request):
         dest = request.POST['destination']
         count = request.POST['passengers']
         date = request.POST['date']
-        cls = request.POST['class']
+        cls = request.POST['clss']
 
         required_flights = FlightInfo.objects.filter(source=src, destination=dest)
         args['details'] = []
@@ -62,9 +63,5 @@ def newpay(request):
     return render(request, 'newpay.html')
 
 
-'''def searchResults(request):
-    flightInfo = FlightInfo.objects.all()
-    flights = list()
-    for flight in flightInfo:
-        flights.append(flight.source)
-    return HttpResponse(flights)'''
+def reservation(request):
+    return render(request, 'reservationStatus.html')
