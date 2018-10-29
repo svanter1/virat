@@ -63,7 +63,7 @@ def newpay(request):
     return render(request, 'newpay.html')
 
 
-<<<<<<< HEAD
+
 def searchResults(request):
     return render(request, 'searchResults.html')
 =======
