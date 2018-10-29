@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title> Airplane Reservation System </title>
     <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
-    <!--<link rel="stylesheet" type='text/css' href="{% static 'css/animate.min.css'%}">-->
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
 </head>
 <body>
 <<<<<<< HEAD
@@ -56,10 +56,11 @@
     </div>
 
 	  <div class="group">
-      <label for="num">Class</label>
-      <select id="num" name="class" placeholder="class">
+      <label for="cls">Class</label>
+      <select id="cls" name="clss" placeholder="clss">
       <option value="0">Economy</option>
         <option value="1">Business</option>
+	  </select>
 	</div>
 
   <div class="group">
@@ -67,14 +68,15 @@
   </div>
 
   </form>
-<!--  <div>
-  <a href="{% url 'newpay' %}">payment</a>
+
+</div>
+
+<div class="topnav">
+  <div class="topnav-right">
+	  <a class="active" href="{% url 'home' %}">Home</a>
+	  <a href="reservation">Ticket Cancel</a>
   </div>
 </div>
-	  <div class="container">-->
-
-</div>
-
 
 <div class="content">
 
@@ -107,7 +109,7 @@
 			 <td>{{flt.4}}</td>
 			 <td>{{flt.5}}</td>
 			 <td>${{flt.6}}</td>
-			<td><a href="passenger/?flt_id={{flt.7}}">Book</a></td>
+			<td><a href="passenger?flt_id={{flt.7}}&cnt={{flt.8}}">Book</a></td>
 		 </tr>
 		{% endfor %}
 	 </table>
@@ -119,6 +121,7 @@
     <script src="/./static/javascript/general.js"></script>
 </div>
 
+<<<<<<< HEAD
 <!--
     $(document).on('submit','#search',function(e){
         e.preventDefault();
@@ -136,5 +139,7 @@
 
 
 >>>>>>> db5df9bbc0156fdbb74e7fcadb3c72a36d763f4a
+=======
+>>>>>>> d37a448b413b492483e38a3ae8612dfefb88b7b8
 </body>
 </html>

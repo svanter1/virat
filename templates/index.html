@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title> Airplane Reservation System </title>
     <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
-    <link rel="stylesheet" type='text/css' href="{% static 'css/animate.min.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
 	<div class="group">
 	    <label for="num">Passengers</label>
 	    <select id="num" name="passengers" placeholder="Enter passengers..">
+<<<<<<< HEAD
 			<option value="0">1</option>
 	      <option value="1">2</option>
 	      <option value="2">3</option>
@@ -40,6 +41,17 @@
 	      <option value="6">7</option>
 	      <option value="7">8</option>
 	      <option value="8">9</option>
+=======
+	    <option value="1">1</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5</option>
+	      <option value="6">6</option>
+	      <option value="7">7</option>
+	      <option value="8">8</option>
+	      <option value="9">9</option>
+>>>>>>> d37a448b413b492483e38a3ae8612dfefb88b7b8
 	      </select>
 	</div>
 
@@ -78,10 +90,11 @@ window.onclick = function(event) {
 -->
 
 <div class="group">
-      <label for="num">Class</label>
-      <select id="num" name="class" placeholder="class">
+      <label for="cls">Class</label>
+      <select id="cls" name="clss" placeholder="clss">
       <option value="0">Economy</option>
         <option value="1">Business</option>
+	  </select>
 </div>
 
   <div class="group">
@@ -105,21 +118,13 @@ window.onclick = function(event) {
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="/./static/javascript/general.js"></script>
 </div>
-<!--
-    $(document).on('submit','#search',function(e){
-        e.preventDefault();
 
-        $.ajax({type: 'POST',
-        url: '',
-        success:function(){
-            alert('It works');
-        }
-    });
-  });
-
-</script>
--->
-
+<div class="topnav">
+  <div class="topnav-right">
+	  <a class="active" href="{% url 'home' %}">Home</a>
+	  <a href="reservation">Ticket Cancel</a>
+  </div>
+</div>
 
 </body>
 </html>

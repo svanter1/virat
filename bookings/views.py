@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import FlightInfo, FlightDetails
 import datetime
 
+
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -17,7 +18,7 @@ def home(request):
         dest = request.POST['destination']
         count = request.POST['passengers']
         date = request.POST['date']
-        cls = request.POST['class']
+        cls = request.POST['clss']
 
         required_flights = FlightInfo.objects.filter(source=src, destination=dest)
         args['details'] = []
@@ -28,7 +29,7 @@ def home(request):
 
                 if not date_trn:
                     args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
-                                         flt.duration_hrs, flt.price, flt.flight_id]]
+                                         flt.duration_hrs, flt.price, flt.flight_id, count]]
 
                 else:
                     if cls:
@@ -40,7 +41,7 @@ def home(request):
 
                     if trn:
                         args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
-                                         flt.duration_hrs, flt.price, flt.flight_id]]
+                                         flt.duration_hrs, flt.price, flt.flight_id, count]]
 
         return render(request, 'searchResults.html', args)
 
@@ -49,11 +50,23 @@ def home(request):
 
 
 def passenger(request):
-    return render(request, 'passenger-details.html')
+    if request.method == 'POST':
+        first_name = request.POST['name']
+        last_name = request.POST['lastname']
+        age = request.POST['phone']
+        gender = request.POST['gender']
+        passport = request.POST['email']
+    else:
+        return render(request, 'passenger-details.html')
 
 def newpay(request):
-    return render(request, 'newpay1.html')
+    return render(request, 'newpay.html')
 
 
+<<<<<<< HEAD
 def searchResults(request):
     return render(request, 'searchResults.html')
+=======
+def reservation(request):
+    return render(request, 'reservationStatus.html')
+>>>>>>> d37a448b413b492483e38a3ae8612dfefb88b7b8

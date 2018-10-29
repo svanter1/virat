@@ -20,8 +20,9 @@ from bookings import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('passenger/', views.passenger, name='passenger'),
+    path('passenger', views.passenger, name='passenger'),
     path(r'^payment/$', views.newpay, name='newpay'),
+    path('reservation', views.reservation, name='reservation'),
     path('admin/', admin.site.urls),
     path('searchResults.html', views.searchResults, name='results')
 ]

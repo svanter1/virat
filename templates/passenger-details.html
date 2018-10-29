@@ -15,36 +15,70 @@
   <div class="ali">
           <div class="column-50">
             <img src="https://images.all-free-download.com/images/graphiclarge/airplane_icon_vector_red_background_280759.jpg" height="80px"><span><h3>Who's Flying?</h3></span>
-            <label for="name">First Name</label> <label for="middlename" class="last">Middle Name</label> <label for="lastname" class="last">Last Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter First Name">
+            <div class="group">
+            <label for="name">First Name</label>
+             <input type="text" id="name" name="name" placeholder="Enter First Name">
+         </div>
+         <div class="group">
+              <label for="middlename" class="last">Middle Name</label>
             <input type="text" id="middlename" name="middlename" placeholder="Enter Middle Name">
-            <input type="text" id="lastname" lastname="lastname" placeholder="Enter Last Name">
-            <label for="phone" class="last">Phone</label> <label for="email" class="last">Email</label>
-            <input type="text" id="phone" name="phone">
-            <input type="text" id="email" lastname="email">
-           <span> <label for="expm">Suffix</label> <span><label for="gender">Gender</span></label><label for="date">Date of Birth</label>
-        
+        </div>
+        <div class="group">
+             <label for="lastname" class="last">Last Name</label> 
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name">
+        </div>
+
+<div class="group">
+            <label for="phone" class="last">Phone</label> 
+            	<input type="text" id="phone" name="phone" placeholder="Phone Number"> </div>
+            <div class="group">
+            <label for="email" class="last">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email Id">
+        </div>
+
+          
+           </div>
+           <div class="group">	
+            <label for="gender">Gender</label>
+
+			<select id="gender" name="gender">
+      			<option selected> None </option>
+      			<option>Male</option>
+      			<option>Female</option>
+      		
+			</select>
+			</div>
+
+			<div class="group">
+
+			<span> <label for="expm">Suffix</label>
+           </span>
               <select id="expm">
       			<option selected> Mr. </option>
       			<option>Ms.</option>
       			<option>Mrs.</option>
 			</select>
-			<select id="gender">
-      			<option selected> None </option>
-      			<option>Male</option>
-      			<option>Female</option>
-			</select></span>
-			<input type="date" id="start" name="trip"/>
-		</span>
-            <label for="ccnum">Do you need special assistance? Type Yes if need.
+		</div>
+
+            <div class="group">
+            <label for="date">Date of Birth</label>
+            <input type="date" id="start" name="trip"/>
+
+        </div>
+		<div class="group">
+            <label for="assistance">Do you need special assistance? Type Yes if need.
             </label>
-            <input type="text" id="cno" name="cno" placeholder="Enter Choice">
+            <input type="text" id="assistance" name="cno" placeholder="Enter Choice">
           
           </div>
 
         </div>
     </div>
-    	<input type="submit" align= "center" value="Continue to Payment" class="button" onClick="" />
+
+    <!-- Adding action for proceeding to next page: payment page -->
+    	<form>
+      <button formaction="newpay.html">Continue to Payment</button> <!-- ype="submit" align= "center" value="Continue to Payment" class="button" /> -->
+      </form>
         
 		
 
