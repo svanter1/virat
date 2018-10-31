@@ -34,7 +34,7 @@ body {
 
 .center {
      width: 1100px;
-  height: 600px;
+  height: 550px;
   background: rgba(0,0,0,0.5);
   color: #fff;
   top: 50%;
@@ -87,7 +87,7 @@ text-align: center;
   border: 1px solid #ccc;
   border-radius: 60px;
   left:70%
-  max-width=500px;
+  max-width=400px;
 margin-left: 270px;
 }
 
@@ -97,7 +97,8 @@ margin-bottom: 10px;
   display: block;
 }
 .sel{margin-bottom: 10px;
-  margin-left: 350px;
+  margin-left: 270px;
+ 
 }
 <!--  -->
 .icon_container {
@@ -150,8 +151,8 @@ margin-bottom: 10px;
 }
  <!--  -->
 .banner h2{
-  top: 100px;
-  left: 24em;
+  top: 30px;
+  left: 50em;
   text-align: center;
   /*color: #cdd0d7;*/
     position: absolute;
@@ -167,6 +168,43 @@ margin-bottom: 10px;
 
 }
  <!--  -->
+
+#expm{text-align: center;
+
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  left:70%
+  width=700px;
+margin-left: 0px;
+margin-right: 200px;
+}
+#expy{text-align: center;
+
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  left:70%
+  max-width=500px;
+margin-left: 0px;
+margin-right: 200px;
+}
+#cvv{text-align: center;
+
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  left:70%
+  max-width=500px;
+margin-left: 0px;
+margin-right: 200px;
+}
 
  .content h1{
   top: 5px;
@@ -187,13 +225,15 @@ margin-bottom: 10px;
 
 }  
 </style>
-<h1 style="text-align: center"> CHECKOUT PAGE </h1>        
+
+<h1 style="text-align: center" >
+<font color="gray">PAY HERE</font> </h1>   
 <div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
 
 <div class = "center">
   <div class="ali">
+
           <div class="column-50">
-            <h3>Payment</h3>
             <label for="name">Name on Card</label>
             <input type="text" id="name" name="name" placeholder="Enter Name">
             <label for="ccnum">Credit card number:(AMERICAN EXPRESS, VISA, DISCOVER, MASTERCARD accepted )
@@ -205,7 +245,7 @@ margin-bottom: 10px;
                 <!-- for getting the expiry details of the card  -->
             <label for="expm">Valid Through (Month)</label>
           <div class="sel"> 
-               <select id="expm">
+               <select  id="expm">
       <option selected> MM </option>
       <option>01</option>
       <option>02</option>
