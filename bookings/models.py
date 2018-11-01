@@ -75,7 +75,7 @@ class AuthUserUserPermissions(models.Model):
 
 
 class BookingInfo(models.Model):
-    booking_id = models.IntegerField(primary_key=True)
+    booking_id = models.AutoField(primary_key=True)
     customer = models.ForeignKey('CustomerInfo', models.DO_NOTHING, blank=True, null=True)
     flight = models.ForeignKey('FlightInfo', models.DO_NOTHING, blank=True, null=True)
     departure_date = models.ForeignKey('FlightDetails', models.DO_NOTHING, db_column='departure_date', blank=True, null=True)
@@ -88,7 +88,7 @@ class BookingInfo(models.Model):
 
 
 class CustomerInfo(models.Model):
-    customer_id = models.IntegerField(primary_key=True)
+    customer_id = models.AutoField(primary_key=True)
     first_name = models.TextField()
     last_name = models.TextField()
     age = models.IntegerField(blank=True, null=True)
@@ -149,6 +149,7 @@ class FlightDetails(models.Model):
     departure_date = models.DateField(unique=True)
     available_bseats = models.IntegerField()
     available_eseats = models.IntegerField()
+    id = models.IntegerField(primary_key=True)
 
     class Meta:
         managed = True
@@ -156,7 +157,7 @@ class FlightDetails(models.Model):
 
 
 class FlightInfo(models.Model):
-    flight_id = models.IntegerField(primary_key=True)
+    flight_id = models.AutoField(primary_key=True)
     source = models.TextField()
     destination = models.TextField()
     departure = models.TimeField()

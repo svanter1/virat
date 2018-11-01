@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import FlightInfo, FlightDetails
+from .models import FlightInfo, FlightDetails, BookingInfo, CustomerInfo
 import datetime
 from django.views.decorators.csrf import csrf_exempt
 
@@ -55,7 +55,6 @@ def passenger(request):
         passport = request.POST['pass']
         gender = request.POST['gender']
         age = request.POST['age']
-
         request.session['flight_id'] = flight_id
         request.session['passenger_count'] = pass_count
         request.session['firstname'] = first_name
@@ -75,7 +74,12 @@ def passenger(request):
 @csrf_exempt
 def newpay(request):
     if request.method == 'POST':
-        print()
+        if request.POST['p_option'] == "CANCEL":
+            return redirect('home')
+        else:
+            cust = CustomerInfo(customer_id = 2, first_name = 'Rakesh', last_name = 'Mohan', age = 25, gender='M', passport='IN2354123765')
+            cust.save()
+            return 
     else:
         return render(request, 'payment_new.html')
 
