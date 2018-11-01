@@ -9,7 +9,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def home(request):
-    #flight = FlightInfo.objects.all()
     flight = FlightInfo.objects.values('source', 'destination').distinct()
     args = {'source': flight}
 
@@ -48,20 +47,27 @@ def home(request):
     else:
         return render(request, 'index.html', args)
 
-
+@csrf_exempt
 def passenger(request):
+    flight_id = request.GET.get('flt_id')
+    pass_count = request.GET.get('cnt')
     if request.method == 'POST':
         first_name = request.POST['name']
-        last_name = request.POST['lastname']
-        age = request.POST['phone']
-        gender = request.POST['gender']
-        passport = request.POST['email']
+        #last_name = request.POST['lastname']
+        #phone = request.POST['phone']
+        #gender = request.POST['gender']
+        #email = request.POST['email']
+
+        return render(request, 'payment.html')
     else:
-        return render(request, 'passenger-details.html')
+        return render(request, 'passengers.html')
 
+@csrf_exempt
 def newpay(request):
-    return render(request, 'newpay.html')
-
+    if request.method == 'POST':
+        return render(request, 'payment.html')
+    else:
+        return render(request, 'payment.html')
 
 def reservation(request):
     return render(request, 'reservationStatus.html')

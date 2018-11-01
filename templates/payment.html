@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Airplane Reservation System </title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/paymentStyles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
+</head>
+<body>
+
+<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+<div class="payment-details">
+    <form id="payment" method="Post">
+            <h3>Payment</h3>
+            <div class="group">
+
+                <label for="name"> Name on Card</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name">
+
+                <label for="expm"> Valid Through (Month)</label>
+
+                    <select id="expm" name="expm">
+                        <option selected> MM </option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+
+            </div>
+
+            <div class="group">
+
+                <div>
+                    <label for="ccnum">Credit card number </label>
+                    <input type="text" id="cno" name="cno" placeholder="Enter Card Number" >
+                </div>
+
+               <label for="expy">Valid Through (Year)</label>
+                    <select id="expy" name="expy">
+                        <option selected>YYYY</option>
+                      <option>2018</option>
+                      <option>2019</option>
+                      <option>2020</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2024</option>
+                      <option>2025</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+                      <option>2029</option>
+                      <option>2030</option>
+                    </select>
+               <!-- <input type="text" id="expy" name="expy" placeholder="YYYY">-->
+              </div>
+
+        <div class="group">
+            <label for="cvv"> CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="***">
+
+                <input type="submit" value="Pay">
+        </div>
+
+    </form>
+</div>
+
+<div class="content">
+
+    <h1 id="nav">AMIGOS JET</h1>
+  </div>
+<div class="topnav">
+  <div class="topnav-right">
+	  <a class="active" href="{% url 'home' %}">Home</a>
+	  <a href="reservation">Ticket Cancel</a>
+  </div>
+</div>
+
+</body>
+</html>
