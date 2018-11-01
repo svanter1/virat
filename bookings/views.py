@@ -55,16 +55,16 @@ def passenger(request):
         #gender = request.POST['gender']
         #email = request.POST['email']
 
-        return render(request, 'payment.html')
+        return render(request, 'payment_new.html')
     else:
         return render(request, 'passengers.html')
 
 @csrf_exempt
 def newpay(request):
     if request.method == 'POST':
-        return render(request, 'payment.html')
+        return render(request, 'payment_new.html')
     else:
-        return render(request, 'payment.html')
+        return render(request, 'payment_new.html')
 
 
 def searchResults(request):
