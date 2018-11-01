@@ -1,11 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import FlightInfo, FlightDetails
 import datetime
-
-
 from django.views.decorators.csrf import csrf_exempt
-
 
 @csrf_exempt
 def home(request):
@@ -19,6 +16,7 @@ def home(request):
         date = request.POST['date']
         cls = request.POST['clss']
 
+        request.session['depature_date'] = date
         required_flights = FlightInfo.objects.filter(source=src, destination=dest)
         args['details'] = []
 
@@ -31,14 +29,17 @@ def home(request):
                 else:
                     if cls:
                         trn = FlightDetails.objects.filter(flight_id=flt.flight_id, available_bseats__gte=count,
-                                                       departure_date=date)
+                                                           departure_date=date)
+
+                        request.session['bseats'] = count
                     else:
                         trn = FlightDetails.objects.filter(flight_id=flt.flight_id, available_eseats__gte=count,
-                                                       departure_date=date)
+                                                           departure_date=date)
+                        request.session['eseats'] = count
                     if trn:
                         args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
-                                         flt.duration_hrs, flt.price, flt.flight_id, count]]
-        print(args['details'])
+                                             flt.duration_hrs, flt.price, flt.flight_id, count]]
+
         return render(request, 'searchResults.html', args)
 
     else:
@@ -50,12 +51,23 @@ def passenger(request):
     pass_count = request.GET.get('cnt')
     if request.method == 'POST':
         first_name = request.POST['name']
-        #last_name = request.POST['lastname']
-        #phone = request.POST['phone']
-        #gender = request.POST['gender']
-        #email = request.POST['email']
+        last_name = request.POST['lastname']
+        passport = request.POST['pass']
+        gender = request.POST['gender']
+        age = request.POST['age']
 
-        return render(request, 'payment_new.html')
+        request.session['flight_id'] = flight_id
+        request.session['firstname'] = first_name
+        request.session['lastname'] = last_name
+        request.session['passport'] = passport
+        request.session['gender'] = gender
+        request.session['age'] = age
+
+        if request.POST['option'] == "Continue":
+            return newpay(request)
+        else:
+            return redirect('home')
+
     else:
         return render(request, 'passengers.html')
 
@@ -63,12 +75,7 @@ def passenger(request):
 def newpay(request):
     if request.method == 'POST':
         return render(request, 'payment_new.html')
-    else:
-        return render(request, 'payment_new.html')
 
-
-def searchResults(request):
-    return render(request, 'searchResults.html')
 
 def reservation(request):
     return render(request, 'reservationStatus.html')
