@@ -1,14 +1,114 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Search Results</title>
+	<meta charset="utf-8">
+	<title> Airplane Reservation System </title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
 </head>
 <body>
-<table>
-    <tr>
-        <td></td>
-    </tr>
-</table>
+
+
+<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+<div class="front-end-details">
+  <form id="search" method="post">
+	<div class="group">
+		<label for="src">Source</label>
+	    <select id="src" name="source" placeholder="Enter Source..">
+			{% for flight in source %}
+      			<option value={{flight.source}}>{{flight.source}}</option>
+    		{% endfor %}
+	    </select>
+	</div>
+	<div class="group">
+	    <label for="dst">Destination</label>
+	    <select id="dst" name="destination" placeholder="Enter Destination..">
+	    	{% for flight in source %}
+      			<option value={{flight.destination}}>{{flight.destination}}</option>
+    		{% endfor %}
+	      </select>
+	</div>
+	<div class="group">
+	    <label for="num">Passengers</label>
+	    <select id="num" name="passengers" placeholder="Enter passengers..">
+	    <option value="0">1</option>
+	      <option value="1">2</option>
+	      <option value="2">3</option>
+	      <option value="3">4</option>
+	      <option value="4">5</option>
+	      <option value="5">6</option>
+	      <option value="6">7</option>
+	      <option value="7">8</option>
+	      <option value="8">9</option>
+	      </select>
+	</div>
+
+	<div class="group">
+        <label for="date">Date</label>
+        <input type="date" id="start" name="date" required/>
+    </div>
+
+	  <div class="group">
+      <label for="cls">Class</label>
+      <select id="cls" name="clss" placeholder="clss">
+      <option value="0">Economy</option>
+        <option value="1">Business</option>
+	  </select>
+	</div>
+
+  <div class="group">
+  	<input type="submit" value="Search">
+  </div>
+
+  </form>
+
+</div>
+
+<div class="topnav">
+  <div class="topnav-right">
+	  <a class="active" href="{% url 'home' %}">Home</a>
+	  <a href="reservation">Ticket Cancel</a>
+  </div>
+</div>
+
+<div class="content">
+
+    <h1 id="nav">AMIGOS JET</h1>
+</div>
+
+<style>
+	<table>
+
+</style>
+<div>
+	<table style="margin-top:500px; margin-left:315px;">
+	  <tr>
+		  <th>Source</th>
+		  <th>Destination</th>
+		  <th>Date</th>
+		  <th>Depature</th>
+		  <th>Arrival</th>
+		  <th>Duration</th>
+		  <th>Price</th>
+		  <th>Book</th>
+	  </tr>
+
+	 {% for flt in details %}
+		 <tr>
+			<td>{{flt.0}}</td>
+			 <td>{{flt.1}}</td>
+			 <td>{{flt.2}}</td>
+			 <td>{{flt.3}}</td>
+			 <td>{{flt.4}}</td>
+			 <td>{{flt.5}}</td>
+			 <td>${{flt.6}}</td>
+			 <td><a href="passenger?flt_id={{flt.7}}&cnt={{flt.8}}">Book</a></td>
+			<!--<td><a href="passenger?flt_id={{flt.7}}&cnt={{flt.8}}">Book</a></td>-->
+		 </tr>
+		{% endfor %}
+	 </table>
+
+</div>
 </body>
 </html>

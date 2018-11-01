@@ -33,13 +33,18 @@ body {
 }
 
 .center {
-    margin: auto;
-    width: 60%;
-    border: 3px solid #73AD21;
-    padding: 10px;
+     width: 1100px;
+  height: 550px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
 } 
   .ali{
-max-width=500px;
+max-width=600px;
 margin: auto
 }
 <!-- for class column-25 we are adjusting it 25% -->
@@ -50,7 +55,7 @@ margin: auto
 <!-- for class column-50 we are adjusting it 50% -->
 .column-50 {
 align: center
-  -ms-flex: 50%; 
+  -ms-flex: 60%; 
   flex: 50%;
 }
 <!-- for class column-75 we are adjusting it 75% -->
@@ -74,16 +79,27 @@ align: center
 }
 
 input[type=text] {
+text-align: center;
+
   width: 50%;
   margin-bottom: 20px;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 60px;
+  left:70%
+  max-width=1000px;
+margin-left: 270px;
 }
 
 label {
-  margin-bottom: 10px;
+margin-bottom: 10px;
+  margin-left: 350px;
   display: block;
+}
+.sel{margin-bottom: 10px;
+  margin-left: 270px;
+   max-width=400px;
+ 
 }
 <!--  -->
 .icon_container {
@@ -93,23 +109,23 @@ label {
 }
 <!--  -->
 .button {
-  background-color: red;
+ background-color: gray;
   color: white;
   align: center;
   padding: 12px;
   margin: 10px 0;
   border: none;
   width: 50%;
-  border-radius: 2px;
+  border-radius: 90px;
   cursor: pointer;
   font-size: 17px;
   position : relative;
-   top:50%; 
+   bottom:200%; 
     left:25%;
 }
 <!--  -->
 .button:hover {
-  background-color: blue;
+  background-color: black;
 }
   <!--  -->
 
@@ -136,8 +152,8 @@ label {
 }
  <!--  -->
 .banner h2{
-  top: 100px;
-  left: 24em;
+  top: 30px;
+  left: 50em;
   text-align: center;
   /*color: #cdd0d7;*/
     position: absolute;
@@ -153,6 +169,43 @@ label {
 
 }
  <!--  -->
+
+#expm{text-align: center;
+
+  width: 67%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  left:70%
+  width=700px;
+margin-left: 0px;
+margin-right: 200px;
+}
+#expy{text-align: center;
+
+  width: 67%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  left:70%
+  max-width=500px;
+margin-left: 0px;
+margin-right: 200px;
+}
+#cvv{text-align: center;
+
+  width: 67%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px;
+  left:70%
+  max-width=500px;
+margin-left: 0px;
+margin-right: 200px;
+}
 
  .content h1{
   top: 5px;
@@ -173,16 +226,18 @@ label {
 
 }  
 </style>
-<h1 style="text-align: center"> CHECKOUT PAGE </h1>        
+
+<h1 style="text-align: center" >
+<font color="gray">PAY HERE</font> </h1>   
 <div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
 
 <div class = "center">
   <div class="ali">
+
           <div class="column-50">
-            <h3>Payment</h3>
             <label for="name">Name on Card</label>
             <input type="text" id="name" name="name" placeholder="Enter Name">
-            <label for="ccnum">Credit card number (Only AMERICAN EXPRESS, VISA, DISCOVER, MASTERCARD accepted )
+            <label for="ccnum">Credit card number:(AMERICAN EXPRESS, VISA, DISCOVER, MASTERCARD accepted )
             </label>
             <input type="text" id="cno" name="cno" placeholder="Enter Card Number">
             
@@ -190,8 +245,8 @@ label {
               <div class="column-50">
                 <!-- for getting the expiry details of the card  -->
             <label for="expm">Valid Through (Month)</label>
-           
-               <select id="expm">
+          <div class="sel"> 
+               <select  id="expm">
       <option selected> MM </option>
       <option>01</option>
       <option>02</option>
@@ -206,12 +261,14 @@ label {
       <option>11</option>
       <option>12</option>
   </select>
+  </div>
            <!-- <input type="text" id="expm" name="expm" placeholder="MM">-->
 
 
                 <label for="expy">Valid Through (Year)</label>
+				<div class="sel">
                 <select id="expy">
-      <option selected>YYYY</option>
+      <option selected >YYYY</option>
       <option>2018</option>
       <option>2019</option>
       <option>2020</option>
@@ -228,17 +285,22 @@ label {
   </select>
                <!-- <input type="text" id="expy" name="expy" placeholder="YYYY">-->
               </div>
+			   </div>	
           
                 <label for="cvv"> CVV</label>
+				<div class="sel"> 
                 <input type="password" id="cvv" name="cvv" placeholder="***">
+				 </div>
               </div>
             </div>
           </div>
 
-        </div>
-    </div>
+        
+    
         <input type="submit" align= "center" value="Continue to checkout" class="button" onClick="return validate();" />
 		</div>
+		</div>
+
          
 </form>
 <div class="container"> 

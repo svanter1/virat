@@ -1,0 +1,36 @@
+.booking-details{
+  width: 400px;
+  height: 200px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+
+.booking-details {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.booking-details label{
+  display: block;
+  margin: 5px 10px 5px 10px;
+}
+
+
+.booking-details select {
+    vertical-align: middle;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+.booking-details .group{
+  display: inline-block;
+}

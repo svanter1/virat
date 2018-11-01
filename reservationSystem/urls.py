@@ -19,10 +19,9 @@ from django.urls import path
 from bookings import views
 
 urlpatterns = [
-
     path('', views.home, name='home'),
-	#added payment page to django framework
-    path(r'^payment/$', views.newpay, name='newpay'),
+    path('passenger', views.passenger, name='passenger'),
+    path('payment', views.newpay, name='newpay'),
+    path('reservation', views.reservation, name='reservation'),
     path('admin/', admin.site.urls),
-    #path('searchResults', views.searchResults, name='results'),
 ]
