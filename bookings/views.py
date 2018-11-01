@@ -57,6 +57,7 @@ def passenger(request):
         age = request.POST['age']
 
         request.session['flight_id'] = flight_id
+        request.session['passenger_count'] = pass_count
         request.session['firstname'] = first_name
         request.session['lastname'] = last_name
         request.session['passport'] = passport
@@ -64,7 +65,7 @@ def passenger(request):
         request.session['age'] = age
 
         if request.POST['option'] == "Continue":
-            return newpay(request)
+            return redirect('newpay')
         else:
             return redirect('home')
 
@@ -74,6 +75,8 @@ def passenger(request):
 @csrf_exempt
 def newpay(request):
     if request.method == 'POST':
+        print()
+    else:
         return render(request, 'payment_new.html')
 
 
