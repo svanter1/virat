@@ -14,7 +14,7 @@
   <form id="search" method="post">
 	<div class="group">
 		<label for="src">Source</label>
-	    <select id="src" name="source" placeholder="Enter Source..">
+	    <select id="src" name="source" placeholder="Enter Source">
 			{% for flight in source %}
       			<option value={{flight.source}}>{{flight.source}}</option>
     		{% endfor %}
@@ -22,7 +22,7 @@
 	</div>
 	<div class="group">
 	    <label for="dst">Destination</label>
-	    <select id="dst" name="destination" placeholder="Enter Destination..">
+	    <select id="dst" name="destination" placeholder="Enter Destination">
 	    	{% for flight in source %}
       			<option value={{flight.destination}}>{{flight.destination}}</option>
     		{% endfor %}
@@ -31,15 +31,17 @@
 	<div class="group">
 	    <label for="num">Passengers</label>
 	    <select id="num" name="passengers" placeholder="Enter passengers..">
-	    <option value="1">1</option>
-	      <option value="2">2</option>
-	      <option value="3">3</option>
-	      <option value="4">4</option>
-	      <option value="5">5</option>
-	      <option value="6">6</option>
-	      <option value="7">7</option>
-	      <option value="8">8</option>
-	      <option value="9">9</option>
+
+			<option value="0">1</option>
+	      <option value="1">2</option>
+	      <option value="2">3</option>
+	      <option value="3">4</option>
+	      <option value="4">5</option>
+	      <option value="5">6</option>
+	      <option value="6">7</option>
+	      <option value="7">8</option>
+	      <option value="8">9</option>
+
 	      </select>
 	</div>
 

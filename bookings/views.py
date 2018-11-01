@@ -25,11 +25,9 @@ def home(request):
         if date >= datetime.datetime.today().strftime('%Y-%m-%d'):
             for flt in required_flights:
                 date_trn = FlightDetails.objects.filter(flight_id=flt.flight_id, departure_date=date)
-
                 if not date_trn:
                     args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
                                          flt.duration_hrs, flt.price, flt.flight_id, count]]
-
                 else:
                     if cls:
                         trn = FlightDetails.objects.filter(flight_id=flt.flight_id, available_bseats__gte=count,
@@ -37,11 +35,10 @@ def home(request):
                     else:
                         trn = FlightDetails.objects.filter(flight_id=flt.flight_id, available_eseats__gte=count,
                                                        departure_date=date)
-
                     if trn:
                         args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
                                          flt.duration_hrs, flt.price, flt.flight_id, count]]
-
+        print(args['details'])
         return render(request, 'searchResults.html', args)
 
     else:
@@ -68,6 +65,10 @@ def newpay(request):
         return render(request, 'payment.html')
     else:
         return render(request, 'payment.html')
+
+
+def searchResults(request):
+    return render(request, 'searchResults.html')
 
 def reservation(request):
     return render(request, 'reservationStatus.html')

@@ -19,7 +19,6 @@ from django.urls import path
 from bookings import views
 
 urlpatterns = [
-
     path('', views.home, name='home'),
     path('passenger', views.passenger, name='passenger'),
     path('payment', views.newpay, name='newpay'),
