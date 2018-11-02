@@ -77,9 +77,36 @@ def newpay(request):
         if request.POST['p_option'] == "CANCEL":
             return redirect('home')
         else:
-            cust = CustomerInfo(customer_id = 2, first_name = 'Rakesh', last_name = 'Mohan', age = 25, gender='M', passport='IN2354123765')
+            custiterator = CustomerInfo.objects.all()
+            maxid = 0
+            for o in custiterator:
+                if o.customer_id > maxid:
+                    maxid = o.customer_id
+            id = maxid+1
+
+            cust = CustomerInfo(customer_id = id, first_name = request.session['firstname'], last_name =
+                            request.session['lastname'], age = request.session['age'],
+                                gender = request.session['gender'], passport = request.session['passport'])
             cust.save()
-            return 
+            maxid = 0
+            bookiterator = BookingInfo.objects.all()
+            for o in bookiterator:
+                if o.booking_id > maxid:
+                    maxid = o.booking_id
+            bid = maxid+1
+            """
+            if(request.session['bseats'] == None):
+                seats = request.session['bseats']
+            else:
+                seats = request.session['eseats']
+            """
+            flight_obj = FlightInfo.objects.get(flight_id=request.session['flight_id'])
+
+            booking = BookingInfo(booking_id = bid, customer = cust, flight = flight_obj,
+                                  departure_date = request.session['depature_date'], status = 'Confirmed',
+                                  seats = 1)
+            booking.save()
+            return redirect('home')
     else:
         return render(request, 'payment_new.html')
 

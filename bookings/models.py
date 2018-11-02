@@ -78,7 +78,7 @@ class BookingInfo(models.Model):
     booking_id = models.AutoField(primary_key=True)
     customer = models.ForeignKey('CustomerInfo', models.DO_NOTHING, blank=True, null=True)
     flight = models.ForeignKey('FlightInfo', models.DO_NOTHING, blank=True, null=True)
-    departure_date = models.ForeignKey('FlightDetails', models.DO_NOTHING, db_column='departure_date', blank=True, null=True)
+    departure_date = models.DateField(blank=True, null=True, db_column="departure_date")
     status = models.TextField(blank=True, null=True)
     seats = models.TextField(blank=True, null=True)  # This field type is a guess.
 
@@ -149,7 +149,7 @@ class FlightDetails(models.Model):
     departure_date = models.DateField(unique=True)
     available_bseats = models.IntegerField()
     available_eseats = models.IntegerField()
-    id = models.IntegerField(primary_key=True)
+
 
     class Meta:
         managed = True
