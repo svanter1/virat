@@ -146,7 +146,7 @@ class DjangoSession(models.Model):
 
 class FlightDetails(models.Model):
     flight = models.ForeignKey('FlightInfo', models.DO_NOTHING, blank=True, null=True)
-    departure_date = models.DateField(unique=True)
+    departure_date = models.DateField()
     available_bseats = models.IntegerField()
     available_eseats = models.IntegerField()
 

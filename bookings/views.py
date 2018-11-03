@@ -17,6 +17,7 @@ def home(request):
         cls = request.POST['clss']
 
         request.session['depature_date'] = date
+        request.session['class'] = cls
         required_flights = FlightInfo.objects.filter(source=src, destination=dest)
         args['details'] = []
 
@@ -32,10 +33,12 @@ def home(request):
                                                            departure_date=date)
 
                         request.session['bseats'] = count
+
                     else:
                         trn = FlightDetails.objects.filter(flight_id=flt.flight_id, available_eseats__gte=count,
                                                            departure_date=date)
                         request.session['eseats'] = count
+
                     if trn:
                         args['details'] += [[flt.source, flt.destination, date, flt.departure, flt.arrival,
                                              flt.duration_hrs, flt.price, flt.flight_id, count]]
@@ -49,12 +52,13 @@ def home(request):
 def passenger(request):
     flight_id = request.GET.get('flt_id')
     pass_count = request.GET.get('cnt')
+    price = request.GET.get('price')
     if request.method == 'POST':
-        first_name = request.POST['name']
-        last_name = request.POST['lastname']
-        passport = request.POST['pass']
-        gender = request.POST['gender']
-        age = request.POST['age']
+        first_name = request.POST.get('name')
+        last_name = request.POST.get('lastname')
+        passport = request.POST.get('pass')
+        gender = request.POST.get('gender')
+        age = request.POST.get('age')
         request.session['flight_id'] = flight_id
         request.session['passenger_count'] = pass_count
         request.session['firstname'] = first_name
@@ -62,8 +66,9 @@ def passenger(request):
         request.session['passport'] = passport
         request.session['gender'] = gender
         request.session['age'] = age
+        request.session['tprice'] = int(pass_count)*int(price)
 
-        if request.POST['option'] == "Continue":
+        if request.POST.get('option') == "Continue":
             return redirect('newpay')
         else:
             return redirect('home')
@@ -106,9 +111,44 @@ def newpay(request):
                                   departure_date = request.session['depature_date'], status = 'Confirmed',
                                   seats = 1)
             booking.save()
-            return redirect('home')
+            import random
+            x = random.randint(1001, 9999)
+            request.session['confirmationId'] = 'VA'+str(x)
+            #print('Travel class:'+request.session['class'])
+            travelclass = int(request.session['class'])
+
+            mmddyyyy = request.session['depature_date'].split('-')
+            idsearch = request.session['flight_id']
+            for s in mmddyyyy:
+                    idsearch += s
+            fdid = int(idsearch)
+            try:
+                flightd = FlightDetails.objects.get(id=fdid)
+                if travelclass:
+                    seatsc = flightd.available_bseats - 1
+                    fd2 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
+                                    available_bseats=seatsc,
+                                    available_eseats=flightd.available_eseats, id=flightd.id)
+                    fd2.save()
+                else:
+                    seatsc = flightd.available_eseats - 1
+                    fd2 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
+                                    available_bseats=flightd.available_bseats,
+                                    available_eseats=seatsc, id=flightd.id)
+                    fd2.save()
+            except FlightDetails.DoesNotExist:
+                fd1 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
+                                    available_bseats=10, available_eseats=30, id=fdid)
+                fd1.save()
+
+
+            #flt_detail = FlightDetails()
+            return render(request, 'payment_success.html')
     else:
         return render(request, 'payment_new.html')
+
+def paymentsuccess(request):
+    return render(request,'payment_success.html')
 
 
 def reservation(request):
