@@ -14,7 +14,7 @@
 
 Wesite Homepage launched and deployed on heroku. Following is the website URL as a deliverable for sprint 1:
 
-**https://amigoairlines.herokuapp.com**
+**https://sampleamigo.herokuapp.com/**
 
 
  # Instruction To Locally Setup The Application :
