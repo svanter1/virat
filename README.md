@@ -51,3 +51,4 @@ The user should be able to search and book any flight of their convenience as pa
     - If you don't wish to create the new user and password the same can be modified in reservationSystem/settings.py at DATABASES.
 10. Then execute command "python manage.py runserver" in the virtual environment to locally host the application, the application can be seen in the link http://127.0.0.1:8000.
 11. If there is any error while running the application it might be due to the missing dependencies, please confirm if all the modules in requirements.txt exist in the system, if not please install them and try again.
+
