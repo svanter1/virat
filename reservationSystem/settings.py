@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'reservationSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'virat_test',
+        'NAME': 'virat',
 	'USER': 'postgres',
 	'PASSWORD': 'postgres',
 	'HOST': 'localhost',
