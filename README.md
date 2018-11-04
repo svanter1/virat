@@ -26,6 +26,8 @@ The user should be able to search for the flight details and browse through the 
 The user should be able to search and book any flight of their convenience as part of deliverable for sprint 3.
 
 
+
+
 **https://sampleamigo.herokuapp.com/**
 
 
