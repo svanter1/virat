@@ -93,27 +93,34 @@ def newpay(request):
                             request.session['lastname'], age = request.session['age'],
                                 gender = request.session['gender'], passport = request.session['passport'])
             cust.save()
+            """
             maxid = 0
             bookiterator = BookingInfo.objects.all()
             for o in bookiterator:
                 if o.booking_id > maxid:
                     maxid = o.booking_id
             bid = maxid+1
-            """
+            
             if(request.session['bseats'] == None):
                 seats = request.session['bseats']
             else:
                 seats = request.session['eseats']
             """
+            import datetime
+            timestr = str(datetime.datetime.now())
+            splittedtime = timestr.split("-")
+            bidstr = str(id)+splittedtime[1]+splittedtime[2][:2]
+            bid = int(bidstr)
+            request.session['confirmationId'] = 'VA'+bidstr
             flight_obj = FlightInfo.objects.get(flight_id=request.session['flight_id'])
 
             booking = BookingInfo(booking_id = bid, customer = cust, flight = flight_obj,
                                   departure_date = request.session['depature_date'], status = 'Confirmed',
                                   seats = 1)
             booking.save()
-            import random
+            """import random
             x = random.randint(1001, 9999)
-            request.session['confirmationId'] = 'VA'+str(x)
+            request.session['confirmationId'] = 'VA'+str(x)"""
             #print('Travel class:'+request.session['class'])
             travelclass = int(request.session['class'])
 
