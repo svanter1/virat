@@ -1,8 +1,7 @@
-.banner h2{
+.error h1{
 	 position: absolute;
-   color: #cdd0d7;
-	 /* Safari compatible */
-    -webkit-animation: animatetxt 7s;
-    -webkit-animation-fill-mode: forwards; /* Safari compatible */
-    animation: animatetxt 7s;
+    -webkit-animation: animateerror 7s;
+    -webkit-animation-fill-mode: forwards;
+    animation: animateerrortxt 7s;
 }
+
