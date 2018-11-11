@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Airplane Reservation System </title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/flight.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
+</head>
+<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+<body>
+
+    <div class="flight-details">
+        <form id="booking" method="get">
+            <p><span><br><b> BOOKING ID: </b>{{book_id}}</span>
+            <span><b> FLIGHT ID: </b>{{fght_id}}</span>
+            <span><b> DEPATURE DATE: </b>{{depature_date}}</span>
+            <span><b> DEPATURE TIME: </b>{{depature_time}}</span>
+                <span><br></span>
+            <span><b> SEATS: </b>{{seats}}</span>
+            <span><b> PRICE: </b>${{total_price}}</span>
+                <span><br></span>
+            <span><b> STATUS: </b>{{status}}</span></p>
+
+            <div class="group">
+                <input type="submit" name="option" value="Cancel Reservation">
+            </div>
+
+        </form>
+    </div>
+    <div class="content">
+
+    <h1 id="nav">AMIGOS JET</h1>
+  </div>
+<div class="topnav">
+  <div class="topnav-right">
+	  <a href="{% url 'home' %}">Home</a>
+	  <a class="active" href="reservation">Ticket Cancel</a>
+  </div>
+</div>
+
+</body>
+</html>

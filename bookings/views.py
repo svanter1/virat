@@ -157,6 +157,33 @@ def newpay(request):
 def paymentsuccess(request):
     return render(request,'payment_success.html')
 
-
+@csrf_exempt
 def reservation(request):
-    return render(request, 'reservationStatus.html')
+    print(request.method)
+    if request.method == 'POST':
+        booking_id = request.POST['bookid']
+        book_args = {'book_id': booking_id}
+        booking = BookingInfo.objects.values('flight_id', 'departure_date', 'status', 'seats')\
+            .filter(booking_id=booking_id)
+
+        if booking:
+            for bok in booking:
+                book_args['fght_id'] = bok['flight_id']
+                book_args['depature_date'] = bok['departure_date']
+                book_args['status'] = bok['status']
+                book_args['seats'] = int(bok['seats'])
+
+                for flight in FlightInfo.objects.filter(flight_id=book_args['fght_id']):
+                    book_args['depature_time'] = flight.departure
+                    book_args['total_price'] = book_args['seats'] * int(flight.price)
+
+                return render(request, 'flightDetails.html', book_args)
+        else:
+            return render(request, 'reservationNoValue.html')
+
+    else:
+        print(request.POST.get('option'))
+        if request.POST.get('option') == "Cancel+Reservation":
+            return render(request, 'reservationNoValue.html')
+
+        return render(request, 'reservationStatus.html')
