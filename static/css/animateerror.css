@@ -2,6 +2,17 @@
 	 position: absolute;
     -webkit-animation: animateerror 7s;
     -webkit-animation-fill-mode: forwards;
-    animation: animateerrortxt 7s;
+    animation: animateerror 7s;
+}
+
+/* Safari compatible */
+@-webkit-keyframes animateerror{
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+@keyframes animateerror {
+    from {top: 0px;}
+    to {top: 200px; }
 }
 
