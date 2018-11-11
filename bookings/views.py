@@ -87,7 +87,7 @@ def passenger(request):
                 #request.session['flag'] = 'false'
                 return render(request, 'passengers.html')
         else:
-            request.session['flag'] = 'false'
+            #request.session['flag'] = 'false'
             return render(request, 'errorpage.html')
     except:
         request.session['flag'] = 'false'
@@ -151,13 +151,13 @@ def newpay(request):
                     try:
                         flightd = FlightDetails.objects.get(id=fdid)
                         if travelclass:
-                            seatsc = flightd.available_bseats - 1
+                            seatsc = flightd.available_bseats - int(request.session['passenger_count'])
                             fd2 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
                                                 available_bseats=seatsc,
                                                 available_eseats=flightd.available_eseats, id=flightd.id)
                             fd2.save()
                         else:
-                            seatsc = flightd.available_eseats - 1
+                            seatsc = flightd.available_eseats - int(request.session['passenger_count'])
                             fd2 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
                                                 available_bseats=flightd.available_bseats,
                                                 available_eseats=seatsc, id=flightd.id)
@@ -168,12 +168,12 @@ def newpay(request):
                         fd1.save()
 
                     # flt_detail = FlightDetails()
-                    #request.session['flag'] = 'false'
+                    request.session['flag'] = 'false'
                     return render(request, 'payment_success.html')
             else:
                 return render(request, 'payment_new.html')
         else:
-            request.session['flag'] = 'false'
+            #request.session['flag'] = 'false'
             return render(request, 'errorpage.html')
     except:
         request.session['flag'] = 'false'
@@ -181,11 +181,8 @@ def newpay(request):
 
 def paymentsuccess(request):
     try:
-        if request.session['flag'] == 'true':
-            return render(request, 'payment_success.html')
-        else:
-            request.session['flag'] = 'false'
-            return render(request, 'errorpage.html')
+        return render(request, 'payment_success.html')
+
     except:
         request.session['flag'] = 'false'
         return render(request, 'errorpage.html')
