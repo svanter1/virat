@@ -1,0 +1,8 @@
+.banner h2{
+	 position: absolute;
+   color: #cdd0d7;
+	 /* Safari compatible */
+    -webkit-animation: animatetxt 7s;
+    -webkit-animation-fill-mode: forwards; /* Safari compatible */
+    animation: animatetxt 7s;
+}
