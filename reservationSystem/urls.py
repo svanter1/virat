@@ -24,5 +24,6 @@ urlpatterns = [
     path('payment', views.newpay, name='newpay'),
     path('success', views.paymentsuccess, name='paymentsuccess'),
     path('reservation', views.reservation, name='reservation'),
+    path('cancellation', views.cancellation, name='cancellation'),
     path('admin/', admin.site.urls),
 ]

@@ -12,7 +12,6 @@
 <body>
 
     <div class="flight-details">
-        <form id="booking" method="get">
             <p><span><br><b> BOOKING ID: </b>{{book_id}}</span>
             <span><b> FLIGHT ID: </b>{{fght_id}}</span>
             <span><b> DEPATURE DATE: </b>{{depature_date}}</span>
@@ -24,10 +23,11 @@
             <span><b> STATUS: </b>{{status}}</span></p>
 
             <div class="group">
-                <input type="submit" name="option" value="Cancel Reservation">
+                <form action="cancellation" method="post">
+                    <input type="submit" value="Cancel Reservation" />
+                </form>
             </div>
 
-        </form>
     </div>
     <div class="content">
 
