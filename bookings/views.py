@@ -135,7 +135,7 @@ def newpay(request):
 
                     booking = BookingInfo(booking_id=bid, customer=cust, flight=flight_obj,
                                           departure_date=request.session['depature_date'], status='Confirmed',
-                                          seats=1)
+                                          seats=int(request.session['passenger_count']))
                     booking.save()
                     """import random
                     x = random.randint(1001, 9999)
@@ -144,9 +144,9 @@ def newpay(request):
                     travelclass = int(request.session['class'])
 
                     mmddyyyy = request.session['depature_date'].split('-')
-                    idsearch = request.session['flight_id']
-                    for s in mmddyyyy:
-                        idsearch += s
+                    idsearch = request.session['flight_id']+str(mmddyyyy[1])+str(mmddyyyy[2])
+                    #for s in mmddyyyy:
+                     #   idsearch += s
                     fdid = int(idsearch)
                     try:
                         flightd = FlightDetails.objects.get(id=fdid)
@@ -163,9 +163,21 @@ def newpay(request):
                                                 available_eseats=seatsc, id=flightd.id)
                             fd2.save()
                     except FlightDetails.DoesNotExist:
-                        fd1 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
-                                            available_bseats=10, available_eseats=30, id=fdid)
-                        fd1.save()
+                        if travelclass:
+                            seatsc = 10 - int(request.session['passenger_count'])
+                            fd2 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
+                                                available_bseats=seatsc,
+                                                available_eseats=30, id=fdid)
+                            fd2.save()
+                        else:
+                            seatsc = 30 - int(request.session['passenger_count'])
+                            fd2 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
+                                                available_bseats=10,
+                                                available_eseats=seatsc, id=fdid)
+                            fd2.save()
+                        #fd1 = FlightDetails(flight=flight_obj, departure_date=request.session['depature_date'],
+                         #                   available_bseats=10, available_eseats=30, id=fdid)
+                        #fd1.save()
 
                     # flt_detail = FlightDetails()
                     request.session['flag'] = 'false'
@@ -210,6 +222,9 @@ def reservation(request):
                         book_args['total_price'] = book_args['seats'] * int(flight.price)
 
                     request.session['cancel_book_id'] = booking_id
+                    request.session['cancelled_seats'] = bok['seats']
+                    request.session['cflight_id'] = bok['flight_id']
+
 
                     return render(request, 'flightDetails.html', book_args)
             else:
@@ -227,6 +242,21 @@ def reservation(request):
 @csrf_exempt
 def cancellation(request):
     if request.method == 'POST':
-        return render(request, 'reservationNoValue.html')
+        bid = int(request.session['cancel_book_id'])
+        dt = int(str(bid)[-4:])
+        cid = int(str(bid)[:-4])
+        fdid = int(str(request.session['cflight_id'])+str(dt))
+        BookingInfo.objects.filter(booking_id=bid).delete()
+        CustomerInfo.objects.filter(customer_id=cid).delete()
+
+        flight_obj = FlightInfo.objects.get(flight_id=request.session['cflight_id'])
+        flightd = FlightDetails.objects.get(id=fdid)
+        seatsc = flightd.available_eseats + int(request.session['cancelled_seats'])
+        fd2 = FlightDetails(flight=flight_obj, departure_date=flightd.departure_date,
+                            available_bseats=flightd.available_bseats,
+                            available_eseats=seatsc, id=flightd.id)
+        fd2.save()
+
+        return render(request, 'cancellationSuccess.html')
     else:
         return render(request, 'errorpage.html')
