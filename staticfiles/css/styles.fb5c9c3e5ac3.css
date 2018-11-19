@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(https://mcalvanyweeklycommentary.com/wp-content/uploads/08_01_17.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+ background-position: all;
+  font-family: Comic Sans MS;
+  font-size: 17px;
+
+}
+
+table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%
+}
+
+th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #696969;
+    color: white;
+}
+
+td{
+    border: 1px solid #ddd;
+    padding: 8px;
+
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+ input[type=text], select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=date], select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #696969;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #808080;
+}
+
+.dropbtn {
+    width: 100%;
+    background-color: #696969;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #808080;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+.banner h2{
+	top: 100px;
+	left: 24em;
+	text-align: center;
+	/*color: #cdd0d7;*/
+  	position: absolute;
+}
+
+.banner h2{
+	 position: absolute;
+   color: #cdd0d7;
+	 /* Safari compatible */
+    -webkit-animation: animatetxt 7s;
+    -webkit-animation-fill-mode: forwards; /* Safari compatible */
+    animation: animatetxt 7s;
+}
+
+/* Safari compatible */
+@-webkit-keyframes animatetxt{
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+@keyframes animatetxt {
+    from {top: 0px;}
+    to {top: 200px; }
+}
+
+
+.front-end-details{
+  width: 900px;
+  height: 200px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+
+.container img {vertical-align: middle;}
+
+	.container{
+
+  /*text-shadow: 3px 2px white;*/
+
+  /*background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
+  color: #transparent;
+  width: 100%;
+  margin-top: 20px;
+  height: 20px;
+  padding: 20px;
+  /*background:rgb(0, 139, 139); /* Navbar color */
+  /* Safari compatible */
+  -webkit-animation: animate 5s infinite;
+   animation: animate 5s infinite;
+}
+
+
+/*@-webkit-keyframes animate {
+    50% {background-color:maroon;}
+}
+
+@keyframes animate {
+    50% {background-color: maroon;}
+}*/
+
+.content h1{
+	top: 5px;
+	text-align: center;
+  font-family: "Impact";
+  font-size: 50px;
+	color: #FFCC66;
+  	position: absolute;
+	/*position: relative;*/
+	/* Safari compatible */
+    -webkit-animation: animate2 8s infinite;
+    -webkit-animation-timing-function: linear;
+    animation: animate2 8s infinite;
+    animation-timing-function: linear;
+
+}
+
+/* Safari 4.0 - 8.0 */
+/*@-webkit-keyframes animate2 {
+    from {left: 0px;}
+    to {left: 850px;}
+}
+
+@keyframes animate2 {
+    from {left: 0px;}
+    to {left: 850px;}
+}*/
+
+
+
+
+.front-end-details { 
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.front-end-details label{
+  display: block;
+  margin: 5px 10px 5px 10px;
+}
+
+
+.front-end-details select {
+    vertical-align: middle;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+.front-end-details .group{
+  display: inline-block;
+}
