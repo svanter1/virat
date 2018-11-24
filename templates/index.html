@@ -50,34 +50,6 @@
         <input type="date" id="start" name="date" required/>
     </div>
 
-    <!--<div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">Class</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#economy">Economy</a>
-    <a href="#preminum">Premium</a>
-    <a href="#business">Business</a>
-  </div>
-</div>
-
-<script>
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
--->
 
 <div class="group">
       <label for="cls">Class</label>
@@ -92,12 +64,7 @@ window.onclick = function(event) {
   </div>
 
   </form>
-<!--  <div>
-  <a href="{% url 'newpay' %}">payment</a>
-  </div>
-</div>
-	  <div class="container">-->
-  
+
 </div>
   <div class="content">
 
@@ -111,8 +78,10 @@ window.onclick = function(event) {
 
 <div class="topnav">
   <div class="topnav-right">
+	  <a href="about">About</a>
 	  <a class="active" href="{% url 'home' %}">Home</a>
-	  <a href="reservation">Ticket Cancel</a>
+	  <a href="reservation">Reservation Status</a>
+	  <a href="contact">Contact Us</a>
   </div>
 </div>
 

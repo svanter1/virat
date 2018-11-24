@@ -260,3 +260,11 @@ def cancellation(request):
         return render(request, 'cancellationSuccess.html')
     else:
         return render(request, 'errorpage.html')
+
+
+def about(request):
+    return render(request, 'aboutUs.html')
+
+
+def contact(request):
+    return render(request, 'contactUs.html')
