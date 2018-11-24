@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title> Airplane Reservation System </title>
     <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
-    <link rel="stylesheet" type='text/css' href="{% static 'css/passenger.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/flight.css'%}">
     <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
 </head>
 
@@ -23,9 +23,36 @@
       </div>
     </div>
     <br><br><br><br><br><br><br>
-    <div align="center">
-    <h2 style="color:white;">Success!</h2><br>
-        <h2 style="color:white;">Your booking : VA{{ request.session.cancel_book_id }} is cancelled.</h2><br>
+    <div class="flight-details">
+        <hr>
+        <h3 style="margin-left:2em;">Cancel Confirmation</h3>
+        <hr>
+        <table style="margin-left:2em;">
+            <tr>
+                <td><b > Amigos Reservation Code </b></td>
+                <td>VA{{request.session.cancel_book_id}}</td>
+            </tr>
+            <tr>
+                <td><b > Amigos Flight ID </b></td>
+                <td>{{request.session.cflight_id}}</td>
+            </tr>
+            <tr>
+                <td><b > Source </b></td>
+                <td>{{request.session.c_source}}</td>
+            </tr>
+            <tr>
+                <td><b > Destination </b></td>
+                <td>{{request.session.c_destination}}</td>
+            </tr>
+            <tr>
+                <td><b > Seats </b></td>
+                <td>{{request.session.cancelled_seats}}</td>
+            </tr>
+            <tr>
+                <td><b > Status </b></td>
+                <td>Cancelled</td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
