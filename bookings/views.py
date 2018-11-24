@@ -18,6 +18,8 @@ def home(request):
         cls = request.POST['clss']
 
         request.session['depature_date'] = date
+        request.session['source'] = src
+        request.session['destination'] = dest
         request.session['class'] = cls
         required_flights = FlightInfo.objects.filter(source=src, destination=dest)
         args['details'] = []
@@ -132,7 +134,6 @@ def newpay(request):
                     bid = int(bidstr)
                     request.session['confirmationId'] = 'VA' + bidstr
                     flight_obj = FlightInfo.objects.get(flight_id=request.session['flight_id'])
-
                     booking = BookingInfo(booking_id=bid, customer=cust, flight=flight_obj,
                                           departure_date=request.session['depature_date'], status='Confirmed',
                                           seats=int(request.session['passenger_count']))
@@ -220,11 +221,12 @@ def reservation(request):
                     for flight in FlightInfo.objects.filter(flight_id=book_args['fght_id']):
                         book_args['depature_time'] = flight.departure
                         book_args['total_price'] = book_args['seats'] * int(flight.price)
+                        book_args['source'] = flight.source
+                        book_args['destination'] = flight.destination
 
                     request.session['cancel_book_id'] = booking_id
                     request.session['cancelled_seats'] = bok['seats']
                     request.session['cflight_id'] = bok['flight_id']
-
 
                     return render(request, 'flightDetails.html', book_args)
             else:
@@ -248,7 +250,6 @@ def cancellation(request):
         fdid = int(str(request.session['cflight_id'])+str(dt))
         BookingInfo.objects.filter(booking_id=bid).delete()
         CustomerInfo.objects.filter(customer_id=cid).delete()
-
         flight_obj = FlightInfo.objects.get(flight_id=request.session['cflight_id'])
         flightd = FlightDetails.objects.get(id=fdid)
         seatsc = flightd.available_eseats + int(request.session['cancelled_seats'])

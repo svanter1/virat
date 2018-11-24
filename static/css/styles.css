@@ -34,6 +34,8 @@ td{
 
 tr:nth-child(even){background-color: #f2f2f2;}
 
+tr:nth-child(odd){background-color: white;}
+
 tr:hover {background-color: #ddd;}
 
  input[type=text], select {
@@ -232,4 +234,15 @@ input[type=submit]:hover {
 
 .front-end-details .group{
   display: inline-block;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 20em;
+    border-style: inset;
+    border-width: 1px;
+    color: #ddd;
 }

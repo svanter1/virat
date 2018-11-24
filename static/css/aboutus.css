@@ -35,3 +35,13 @@ input[type=text]{
     box-sizing: border-box;
 }
 
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 3.7em;
+    margin-right: 10em;
+    border-style: inset;
+    border-width: 1px;
+    color: #ddd;
+}
