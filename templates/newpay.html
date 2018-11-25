@@ -1,313 +1,220 @@
 {% load static %}
 <!DOCTYPE html>
 
-
-<html>
-
 <head>
-
-<title> Payment Page </title>
-<!--<script type="text/javascript" src="validate.js"></script> -->
-<script type="text/javascript" src="{{ STATIC_URL }}js/validate.js"></script>
-
-
-</head>
-
-<body> 
-           
-<form id="form" name="RegForm" action="" onsubmit=" return validate()" method="post">  
- 
-<style> 
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
+    <style>
 body {
-  margin: 0;
-  padding: 0;
-  
-  background: url(https://mcalvanyweeklycommentary.com/wp-content/uploads/08_01_17.jpg);
-  background-repeat: repeat;
-  background-size: cover;
- background-position: all;
-  font-family: Comic Sans MS;
+  font-family: Arial;
   font-size: 17px;
-
+  padding: 8px;
 }
 
-.center {
-     width: 1100px;
-  height: 550px;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%,-50%);
+* {
   box-sizing: border-box;
-} 
-  .ali{
-max-width=600px;
-margin: auto
 }
-<!-- for class column-25 we are adjusting it 25% -->
-.column-25 {
-  -ms-flex: 25%;
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
   flex: 25%;
 }
-<!-- for class column-50 we are adjusting it 50% -->
-.column-50 {
-align: center
-  -ms-flex: 60%; 
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
   flex: 50%;
 }
-<!-- for class column-75 we are adjusting it 75% -->
-.column-75 {
-  -ms-flex: 75%;<!--  -->
-  flex: 75%;
+
+.col-100 {
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
+  align-content: center;
 }
-<!-- for class column-75 25 50 we are padding 0 and 16px for better spacing -->
-.column-25,
-.column-50,
-.column-75 {
+
+.col-25,
+.col-50,
+.col-100 {
   padding: 0 16px;
 }
-<!-- for class container in html I created background color padding border border-radius -->
-.container {
-  align : center
-  background-color: #f2f2f2;<!--  -->
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;<!--  -->
+
+
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-input[type=text] {
-text-align: center;
-
-  width: 50%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 60px;
-  left:70%
-  max-width=1000px;
-margin-left: 270px;
-}
-
 label {
-margin-bottom: 10px;
-  margin-left: 350px;
+  margin-bottom: 10px;
   display: block;
 }
-.sel{margin-bottom: 10px;
-  margin-left: 270px;
-   max-width=400px;
- 
-}
-<!--  -->
-.icon_container {
+
+.icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
 }
-<!--  -->
-.button {
- background-color: gray;
+
+.btn {
+  background-color: #4CAF50;
   color: white;
-  align: center;
   padding: 12px;
   margin: 10px 0;
   border: none;
-  width: 50%;
-  border-radius: 90px;
+  width: 100%;
+  border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
-  position : relative;
-   bottom:200%; 
-    left:25%;
-}
-<!--  -->
-.button:hover {
-  background-color: black;
-}
-  <!--  -->
-
-.container img {vertical-align: middle;}
-
-<!--  -->
-
-
-  .container{
-
-  /*text-shadow: 3px 2px white;*/
-
-  /*background: rgba(0, 0, 0, 1); /* Black background with 0.5 opacity */
-  color: #transparent;
-  width: 100%;
-  margin-top: 20px;
-  height: 20px;
-  padding: 20px;
-  /*background:rgb(0, 139, 139); /* Navbar color */
-  /* Safari compatible */
-  -webkit-animation: animate 5s infinite;
-   animation: animate 5s infinite;
-   
-}
- <!--  -->
-.banner h2{
-  top: 30px;
-  left: 50em;
-  text-align: center;
-  /*color: #cdd0d7;*/
-    position: absolute;
-}
- <!--  -->
-.banner h2{
-   position: absolute;
-   color: #cdd0d7;
-   /* Safari compatible */
-    -webkit-animation: animatetxt 7s;
-    -webkit-animation-fill-mode: forwards; /* Safari compatible */
-    animation: animatetxt 7s;
-
-}
- <!--  -->
-
-#expm{text-align: center;
-
-  width: 67%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 60px;
-  left:70%
-  width=700px;
-margin-left: 0px;
-margin-right: 200px;
-}
-#expy{text-align: center;
-
-  width: 67%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 60px;
-  left:70%
-  max-width=500px;
-margin-left: 0px;
-margin-right: 200px;
-}
-#cvv{text-align: center;
-
-  width: 67%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 60px;
-  left:70%
-  max-width=500px;
-margin-left: 0px;
-margin-right: 200px;
 }
 
- .content h1{
-  top: 5px;
-  text-align: center;
-  font-family: "Impact";
-  font-size: 50px;
-  color: #FFCC66;
-    position: absolute;
-  /*position: relative;*/
-  /* Safari compatible */
-    -webkit-animation: animate2 8s infinite;
-    -webkit-animation-timing-function: linear;
-    animation: animate2 8s infinite;
-    animation-timing-function: linear;
+.btn:hover {
+  background-color: #45a049;
 }
 
- <!--  -->
+a {
+  color: #2196F3;
+}
 
-}  
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.passenger-details{
+  color: #fff;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+
+.passenger-details {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.passenger-details label{
+  display: block;
+  margin: 5px 10px 5px 10px;
+}
+
+.passenger-details .group{
+  display: inline-block;
+}
+
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
 </style>
 
-<h1 style="text-align: center" >
-<font color="gray">PAY HERE</font> </h1>   
-<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+</head>
 
-<div class = "center">
-  <div class="ali">
-
-          <div class="column-50">
-            <label for="name">Name on Card</label>
-            <input type="text" id="name" name="name" placeholder="Enter Name">
-            <label for="ccnum">Credit card number:(AMERICAN EXPRESS, VISA, DISCOVER, MASTERCARD accepted )
-            </label>
-            <input type="text" id="cno" name="cno" placeholder="Enter Card Number">
-            
-            <div class="row">
-              <div class="column-50">
-                <!-- for getting the expiry details of the card  -->
-            <label for="expm">Valid Through (Month)</label>
-          <div class="sel"> 
-               <select  id="expm">
-      <option selected> MM </option>
-      <option>01</option>
-      <option>02</option>
-      <option>03</option>
-      <option>04</option>
-      <option>05</option>
-      <option>06</option>
-      <option>07</option>
-      <option>08</option>
-      <option>09</option>
-      <option>10</option>
-      <option>11</option>
-      <option>12</option>
-  </select>
+<body>
+<div class="content">
+    <h1 id="nav">AMIGOS JET</h1>
   </div>
-           <!-- <input type="text" id="expm" name="expm" placeholder="MM">-->
+<div class="topnav">
+  <div class="topnav-right">
+	  <a href="{% url 'home' %}">About</a>
+	  <a href="{% url 'home' %}">Home</a>
+	  <a href="reservation">Reservation Status</a>
+	  <a href="{% url 'home' %}">Contact Us</a>
+  </div>
+</div><br><br>
+  <div class="col-100">
+      <div class="passenger-details">
+    <div class="container">
+      <form method="Post">
+          <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Enter name here" required>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="name@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="121, Vasant Vihar" required>
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New Delhi" required>
 
-
-                <label for="expy">Valid Through (Year)</label>
-				<div class="sel">
-                <select id="expy">
-      <option selected >YYYY</option>
-      <option>2018</option>
-      <option>2019</option>
-      <option>2020</option>
-      <option>2021</option>
-      <option>2022</option>
-      <option>2023</option>
-      <option>2024</option>
-      <option>2025</option>
-      <option>2026</option>
-      <option>2027</option>
-      <option>2028</option>
-      <option>2029</option>
-      <option>2030</option>
-  </select>
-               <!-- <input type="text" id="expy" name="expy" placeholder="YYYY">-->
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="Delhi" required>
               </div>
-			   </div>	
-          
-                <label for="cvv"> CVV</label>
-				<div class="sel"> 
-                <input type="password" id="cvv" name="cvv" placeholder="***">
-				 </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="123456" required>
+              </div>
+			  <br>
+			  <div class="col-50">
+                <label for="priceTotal">Total Price</label>
+                <label for="numericValue"><b>${{ request.session.tprice }}</b></label>
               </div>
             </div>
           </div>
 
-        
-    
-        <input type="submit" align= "center" value="Continue to checkout" class="button" onClick="return validate();" />
-		</div>
-		</div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Enter name here">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" maxlength="16" placeholder="1111-2222-3333-4444">
+            <div class="row">
+			<div class="col-50">
+			<label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" maxlength="2" placeholder="01">
+            </div>
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" maxlength="4" placeholder="2018">
+              </div>
+              </div>
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="555">
+          </div>
+              <div class="col-50">
+            <input type="submit" name="p_option" value="SUBMIT" class="btn">
+        </div>
+          <div class="col-50">
+            <input type="submit" name="p_option" value="CANCEL" class="btn">
+        </div>
+        </div>
 
-         
-</form>
-<div class="container"> 
-  
-</div>
-  <div class="content">
-
-    <h1 id="nav">AMIGOS JET</h1>
+      </form>
+    </div>
   </div>
+</div>
 </body>
+</html>
