@@ -5,67 +5,54 @@
 	<meta charset="utf-8">
 	<title> Airplane Reservation System </title>
     <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
-    <link rel="stylesheet" type='text/css' href="{% static 'css/paymentStyles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/flight.css'%}">
     <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
 </head>
 
 <body>
     <div class="content">
-        <h1 id="nav">AMIGOS JET</h1>
-    </div>
 
+    <h1 id="nav">AMIGOS JET</h1>
+  </div>
     <div class="topnav">
       <div class="topnav-right">
           <a href="about">About</a>
           <a href="{% url 'home' %}">Home</a>
-          <a href="reservation">Reservation Status</a>
+          <a class="active" href="reservation">Reservation Status</a>
           <a href="contact">Contact Us</a>
       </div>
     </div>
-
     <br><br><br><br><br><br><br>
-    <div class="payment-details">
-
+    <div class="flight-details">
         <hr>
-        <h3 style="margin-left:2em;">Booking Confirmation</h3>
+        <h3 style="margin-left:2em;">Cancel Confirmation</h3>
         <hr>
         <table style="margin-left:2em;">
             <tr>
                 <td><b > Amigos Reservation Code </b></td>
-                <td>{{request.session.confirmationId}}</td>
+                <td>VA{{request.session.cancel_book_id}}</td>
             </tr>
             <tr>
                 <td><b > Amigos Flight ID </b></td>
-                <td>{{request.session.flight_id}}</td>
+                <td>{{request.session.cflight_id}}</td>
             </tr>
             <tr>
                 <td><b > Source </b></td>
-                <td>{{request.session.source}}</td>
+                <td>{{request.session.c_source}}</td>
             </tr>
             <tr>
                 <td><b > Destination </b></td>
-                <td>{{request.session.destination}}</td>
-            </tr>
-            <tr>
-                <td><b > Depature </b></td>
-                <td>{{request.session.depature_date}}</td>
-            </tr>
-            <tr>
-                <td><b > Name </b></td>
-                <td>{{request.session.lastname}}, {{request.session.firstname}}</td>
+                <td>{{request.session.c_destination}}</td>
             </tr>
             <tr>
                 <td><b > Seats </b></td>
-                <td>{{request.session.passenger_count}}</td>
+                <td>{{request.session.cancelled_seats}}</td>
             </tr>
             <tr>
-                <td><b > Price </b></td>
-                <td>{{request.session.tprice}}</td>
+                <td><b > Status </b></td>
+                <td>Cancelled</td>
             </tr>
         </table>
-        <div>
-            <h3 style="margin-left:2em;">Thank you! for choosing Amigo Airlines, Hope you enjoyed the service</h3>
-        </div>
     </div>
 </body>
 </html>

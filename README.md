@@ -25,8 +25,15 @@ The user should be able to search for the flight details and browse through the 
 
 The user should be able to search and book any flight of their convenience as part of deliverable for sprint 3.
 
+### Sprint 4:
+02 Nov 2018 to 16 Nov 2018
 
+The user should be able to retreived the booked flight details and check status and cancel it if necessary as part of deliverable for sprint 4.
 
+### Sprint 5:
+18 Nov 2018 to 30 Nov 2018
+
+The user should be able to check about the airlines values in about us page and contact us details as part of deliverable for sprint 5.
 
 **https://sampleamigo.herokuapp.com/**
 

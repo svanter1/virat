@@ -13,53 +13,55 @@
 
     <div class="passenger-details">
         <form id="passenger" method="Post">
-        <h3> PASSENGER DETAILS </h3>
+        <h3 style="margin-left:1em;"> PASSENGER DETAILS </h3>
 
-        <div class="group">
+        <div style="margin-left:1em;" class="group">
             <label for="name">First Name</label>
              <input type="text" id="name" name="name" placeholder="Enter First Name" required>
         </div>
-            <div class="group">
-                 <label for="lastname" class="last">Last Name</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" required>
-            </div>
 
-            <div class="group">
-                <label for="passport" class="pass">Passport No</label>
-                <input type="text" id="pass" name="pass" placeholder="Passport Number" required>
-            </div>
+        <div class="group">
+             <label for="lastname" class="last">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" required>
+        </div>
 
-            <div class="group">
-                <label for="phone" class="ph">Phone</label>
-                <input type="number" id="ph" name="phone" placeholder="Phone Number">
-            </div>
+        <div class="group">
+            <label for="passport" class="pass">Passport No</label>
+            <input type="text" id="pass" name="pass" placeholder="Passport Number" required>
+        </div>
 
-            <div class="group">
-                <label for="email" class="eml">Email</label>
-                <input type="text" id="email" name="email" placeholder="Email Id" size="35">
-            </div>
+        <div style="margin-left:1em;" class="group">
+            <label for="phone" class="ph">Phone</label>
+            <input type="number" id="ph" name="phone" placeholder="Phone Number">
+        </div>
 
-            <div class="group">
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender" placeholder="Select gender.." required>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                </select>
-            </div>
+        <div class="group">
+            <label for="email" class="eml">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email Id" size="35">
+        </div>
+
+        <div style="margin-left:1em;" class="group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" placeholder="Select gender.." required>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
 
       <div class="group">
             <label for="age">Age</label>
-            <input type="number" id="age" name="age" maxlength="2" required/>
+            <input type="number" id="age" name="age" maxlength="2"  placeholder="99" required/>
 
-        </div>
+      </div>
 
-        <div class="group">
-            <input type="submit" name="option" value="Continue">
-        </div>
+       <br>
+      <div style="margin-left:1em;" class="group">
+        <input type="submit" name="option" value="Continue">
+      </div>
 
-        <div class="group">
-            <input type="submit" name="option" value="Cancel">
-        </div>
+       <div class="group">
+        <input type="submit" name="option" value="Cancel">
+       </div>
     </form>
 </div>
     <div class="content">
@@ -68,8 +70,10 @@
   </div>
 <div class="topnav">
   <div class="topnav-right">
-	  <a class="active" href="{% url 'home' %}">Home</a>
-	  <a href="reservation">Ticket Cancel</a>
+	  <a href="about">About</a>
+	  <a href="{% url 'home' %}">Home</a>
+	  <a href="reservation">Reservation Status</a>
+	  <a href="{% url 'home' %}">Contact Us</a>
   </div>
 </div>
 
@@ -77,7 +81,7 @@
 <footer class="panel-footer">
     <div class="row">
         <section id="terms">
-            <h4><u>Terms and Condtions:</u></h4>
+            <h4><u style= "color:white;">Terms and Condtions:</u></h4>
             <p>• I agree to the fare rules, Terms & Conditions, Privacy Policy, and Contract of Carriage.<br>
             • All nonrefundable funds applied toward the purchase of a new reservation remain nonrefundable.
             Expiration dates of applied funds may result in new ticket(s) expiring earlier than the 12 months from date of purchase.<br>

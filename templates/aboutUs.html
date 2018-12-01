@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Airplane Reservation System </title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/aboutus.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
+</head>
+
+<body>
+    <div class="content">
+        <h1 id="nav">AMIGOS JET</h1>
+    </div>
+    <div class="topnav">
+      <div class="topnav-right">
+          <a class="active" href="about">About</a>
+          <a href="{% url 'home' %}">Home</a>
+          <a href="reservation">Reservation Status</a>
+          <a href="contact">Contact Us</a>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br>
+    <div class="about-details">
+        <div>
+            <h1 style="margin-left:2em;">About Us</h1>
+            <hr>
+            <p style="margin-left:5em;">
+                To the world we serve, <br><br>
+
+            Amigo Jets is such an iconic brand that over many decades we've come to occupy an important place in the lives of our employees and customers.<br>
+            The very name Amigos has a way of evoking strong memories and an uncanny power to set a person to humming the opening bars of "Rhapsody in Blue"<br>
+            without even noticing it. Perhaps you flew with us to reach a child's graduation or wedding.<br><br>
+
+            Maybe you trusted us to get you to that big job interview on time, or to embark on new adventures, or to reunite with old friends. We've been there<br>
+            for you during the daily grind of business trips, and I hope we've made those countless miles seem more comfortable and productive. Like you, I've<br>
+            enjoyed a long association with Amigos. For us, the name Amigos evokes something special. It brings to mind the countless inspiring stories of so <br>
+            many dedicated professionals I've met. Each day, they make me proud to call myself a member of their team.<br><br>
+
+            I see our people going the extra mile for our customers and for one another. I see them brave the elements and endure the long hours and late nights,<br>
+            often far away from their homes. I see them strive to go beyond expectations and deliver a better experience for our customers with each flight.<br>
+            This is the vision of our company that I find most inspiring.<br><br>
+
+            In order to find out what the rest of my colleagues felt most inspired by, we conducted interviews and gathered thousands of viewpoints from people<br>
+            across our system. The result is our company's first-ever statement of Shared Purpose and Values. It will serve as the touchstone of our efforts and<br>
+            the benchmark of our progress as we strive to create the best airline in the world for you.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.about-details{
+  width: 1500px;
+  height: 550px;
+  background-color: white;
+  top: 55%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  color:black;
+}
+
+.about-details {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.about-details label{
+  display: block;
+  margin: 5px 10px 5px 10px;
+}
+
+.about-details .group{
+  display: inline-block;
+}
+
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 3.7em;
+    margin-right: 10em;
+    border-style: inset;
+    border-width: 1px;
+    color: #ddd;
+}

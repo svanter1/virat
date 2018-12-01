@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Airplane Reservation System </title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/flight.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/menu.css'%}">
+</head>
+<div class="banner"><h2><b><i>Fly with Us!</i></b></h2></div>
+<body>
+
+    <div class="flight-details">
+        <hr>
+        <h3 style="margin-left:2em;">Order Info</h3>
+        <hr>
+        <table style="margin-left:2em;">
+            <tr>
+                <td><b > Amigos Reservation Code </b></td>
+                <td>VA{{book_id}}</td>
+            </tr>
+            <tr>
+                <td><b > Amigos Flight ID </b></td>
+                <td>{{fght_id}}</td>
+            </tr>
+            <tr>
+                <td><b > Source </b></td>
+                <td>{{source}}</td>
+            </tr>
+            <tr>
+                <td><b > Destination </b></td>
+                <td>{{destination}}</td>
+            </tr>
+            <tr>
+                <td><b > Depature </b></td>
+                <td>{{depature_date}}, {{depature_time}}</td>
+            </tr>
+            <tr>
+                <td><b > Seats </b></td>
+                <td>{{seats}}</td>
+            </tr>
+            <tr>
+                <td><b > Price </b></td>
+                <td>{{total_price}}</td>
+            </tr>
+            <tr>
+                <td><b > Status </b></td>
+                <td>{{status}}</td>
+            </tr>
+        </table>
+
+        <div class="group">
+            <form style="margin-left:5em;" action="cancellation" method="post">
+                <input type="submit" value="Cancel Booking" />
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <h1 id="nav">AMIGOS JET</h1>
+    </div>
+
+    <div class="topnav">
+      <div class="topnav-right">
+          <a href="about">About</a>
+          <a href="{% url 'home' %}">Home</a>
+          <a class="active" href="reservation">Reservation Status</a>
+          <a href="contact">Contact Us</a>
+      </div>
+    </div>
+
+</body>
+</html>
